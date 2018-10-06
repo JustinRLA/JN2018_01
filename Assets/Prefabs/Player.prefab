@@ -1005,6 +1005,7 @@ GameObject:
   - component: {fileID: 136089008411331052}
   - component: {fileID: 114981834661789586}
   - component: {fileID: 114625476105823856}
+  - component: {fileID: 114502331360600144}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1437,7 +1438,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1822254617969766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.541283, y: 7.3676984e-17, z: -3.3181164}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4867648163908440}
@@ -2664,6 +2665,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114502331360600144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1822254617969766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00c1146cd6014f499a5e252e04f632b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalBtn: Horizontal
+  verticalBtn: Vertical
+  Interact1Btn: Interact1
+  Interact2Btn: Interact2
+  TakeGiveBtn: TakeGive
+  startBtn: Submit
+  quitBtn: Quit
+  mentalHealthScore: 100
+  isHoldingItem: 0
+  isActing: 0
+  idleAnxietyTime: 5
 --- !u!114 &114596193911993364
 MonoBehaviour:
   m_ObjectHideFlags: 1
