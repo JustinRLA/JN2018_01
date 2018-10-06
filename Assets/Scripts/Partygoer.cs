@@ -46,7 +46,10 @@ public class Partygoer : MonoBehaviour {
 		//Player.Depress(how much to depress);
 	}
 
-	private void OnTriggerEnter (Collider other) {
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //TRIGGER FUNCTIONS
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private void OnTriggerEnter (Collider other) {
 
 		if (other.gameObject.tag == "partyGoer") { // if the partygoer runs into another partygoer
 			if (Random.Range (0f, 1f) <= anger - 0.2f) {
@@ -78,7 +81,7 @@ public class Partygoer : MonoBehaviour {
 		}
 	}
 
-	public Vector3 RandomNavmeshLocation (float radius) {
+    public Vector3 RandomNavmeshLocation (float radius) {
 		Vector3 randomDirection = Random.insideUnitSphere * radius;
 		randomDirection += transform.position;
 		UnityEngine.AI.NavMeshHit hit;
@@ -89,4 +92,26 @@ public class Partygoer : MonoBehaviour {
 		return finalPosition;
 	}
 
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //GAMEPLAY FUNCTIONS
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public void SetMood(float modifier)
+    {
+        //Modify partygoer's mood
+        anger = anger + modifier;
+
+        //Partygoer reactions
+        if (modifier > 0)
+        {
+            //!!! Partygoer failure reaction
+        }
+        else if (modifier < 0)
+        {
+            //!!! Partygoer success reaction
+        }
+        else
+        {
+            //!!!Neutral reaction
+        }
+    }
 }
