@@ -1,17 +1,22 @@
 fileFormatVersion: 2
-guid: 1073c130b12a8204b87b0de98893daa5
+guid: 42b1be32d24f76547a0141fa04684fa8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: BaseCharacter_BaseCharacter
+    100004: BaseCharacter_Face
     400000: //RootNode
-    2100000: closed_M_Blinds
-    2100002: closed_M_Metal
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: closed:Blinds
-    9500000: //RootNode
-    13700000: //RootNode
+    400002: BaseCharacter_BaseCharacter
+    400004: BaseCharacter_Face
+    2100000: BaseCharacter_BaseCharacterMat
+    2100002: BaseCharacter_FaceMat
+    2300000: BaseCharacter_BaseCharacter
+    2300002: BaseCharacter_Face
+    3300000: BaseCharacter_BaseCharacter
+    3300002: BaseCharacter_Face
+    4300000: BaseCharacter_BaseCharacter
+    4300002: BaseCharacter_Face
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -31,8 +36,8 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 1
-    animationCompression: 3
+    importConstraints: 0
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -62,9 +67,9 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -89,7 +94,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
