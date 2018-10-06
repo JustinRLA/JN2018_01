@@ -24,11 +24,15 @@ public class GameState : MonoBehaviour {
     //GAMEPLAY VARIABLES
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Basic counter for how the player's mental health/anxiety is going
-    public int mentalHealthScore = 100;
+    public float mentalHealthScore = 100.0f;
     //Is the player currently holding an item
     public bool isHoldingItem = false;
     //Is the player doing an action (use to prevent triggers while performing action)
     public bool isActing = false;
+    //Rate at which player's mental health deteriorates
+    public float healthDecay = 0.01f;
+    //Is the player's anxiety decrease on cooldown
+    public bool isNotGettingAnxious = false;
     //How long in seconds between interactions before anxiety kicks in
     public int idleAnxietyTime = 5;
     //The mental health score needed to make balcony accessible
@@ -51,7 +55,7 @@ public class GameState : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
         //Manual Quit
         if (Input.GetButtonUp (quitBtn)) {
             Lose ();
@@ -70,6 +74,12 @@ public class GameState : MonoBehaviour {
         else if (mentalHealthScore <= balconyAccessible)
         {
             //Make balcony available interaction for the player
+        }
+        
+        //Gradual decrease of mental health over time
+        if(mentalHealthScore > goodEndTrigger && !isNotGettingAnxious)
+        {
+            mentalHealthScore = mentalHealthScore - (healthDecay * Time.deltaTime);
         }
     }
 
@@ -241,5 +251,13 @@ public class GameState : MonoBehaviour {
         //print("player on cooldown");
         yield return new WaitForSeconds(interactionCooldown);
         playerOnCooldown = false;
+    }
+
+    IEnumerator AnxietyPauseCooldown()
+    {
+        isNotGettingAnxious = true;
+        //print("player on cooldown");
+        yield return new WaitForSeconds(idleAnxietyTime);
+        isNotGettingAnxious = false;
     }
 }
