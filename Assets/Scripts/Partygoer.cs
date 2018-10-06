@@ -49,30 +49,30 @@ public class Partygoer : MonoBehaviour {
 	private void OnTriggerEnter (Collider other) {
 
 		if (other.gameObject.tag == "partyGoer") { // if the partygoer runs into another partygoer
-			if (Random.Range (0f, 1f) <= anger / 2f) {
+			if (Random.Range (0f, 1f) <= anger - 0.2f) {
 				AI.destination = other.gameObject.transform.position; // "Angry" partygoers will act selfishly and flock to other players
 			}
-			if (Random.Range (0f, 1f) <= anger / 2f) { // maybe say hi
+			if (Random.Range (0f, 1f) <= anger - 0.2f) { // maybe say hi
 				emotion.Emote ("Yes");
 			}
 		}
 		if (other.gameObject.tag == "outerPlayer") { // if the partygoer runs into another player
 
-			if (Random.Range (0f, 1f) <= anger) {
+			if (Random.Range (0f, 1f) <= anger - 0.2f) {
 				AI.speed = minSpeed;
 				AI.destination = other.gameObject.transform.position; // "Angry" partygoers will walk towards the player
 			}
-			if (Random.Range (0f, 1f) <= anger) { // maybe say what
+			if (Random.Range (0f, 1f) <= anger - 0.2f) { // maybe say what
 				emotion.Emote ("Maybe");
 			}
 		}
 		if (other.gameObject.tag == "intimatePlayer") { // if the partygoer gets too close to the player
 
-			if (Random.Range (0f, 1f) <= anger) {
+			if (Random.Range (0f, 1f) <= anger - 0.2f) {
 				// Play freakout anim
 				DepressPlayer (anger);
 			}
-			if (Random.Range (0f, 1f) <= anger) { // maybe say fuck off
+			if (Random.Range (0f, 1f) <= anger - 0.2f) { // maybe say fuck off
 				emotion.Emote ("No");
 			}
 		}
