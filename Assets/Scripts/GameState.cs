@@ -13,28 +13,55 @@ public class GameState : MonoBehaviour {
     public string quitBtn = "Quit";
 
     //State Variables
+    public int mentalHealthScore;
 
     // Use this for initialization
     void Start () {
-		//Set starting status variables
+        //Set starting status variables
+        mentalHealthScore = 100;
 	}
 
 	// Update is called once per frame
 	void Update () {
+        //Manual Quit
         if (Input.GetButtonUp(quitBtn))
         {
             Lose();
         }
 
+        //Manual Win
         if (Input.GetButtonUp(startBtn))
         {
             Win();
         }
 
+        //Manual Main Menu return
         if (Input.GetKeyUp("space"))
         {
             MainMenu();
         }
+
+        //Trigger Balcony Prompt
+        if (mentalHealthScore <= 0)
+        {
+            PlayBalconyPrompt();
+        }
+    }
+
+    //When player has run out of possible interactions and should go to the balcony or leave
+    void PlayBalconyPrompt()
+    {
+        print("Player is ready for ending sequence");
+        //Make all attendees hostile
+        //Highlight balcony
+    }
+
+    //When player has entered the balcony (to trigger the cutscene)
+    void PlayEndingSequence()
+    {
+        print("Player is ready for ending sequence");
+        //Play balcony cinematic
+        Win();
     }
 
 	void Lose(){
