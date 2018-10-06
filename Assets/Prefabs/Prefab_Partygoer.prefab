@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 114006740422199388}
   - component: {fileID: 136225881172344742}
   - component: {fileID: 54147719933971378}
+  - component: {fileID: 114037952693773532}
   m_Layer: 0
   m_Name: Prefab_Partygoer
   m_TagString: Untagged
@@ -480,12 +481,17 @@ MonoBehaviour:
   triggerMesh: {fileID: 23594090550003672}
   randomMood: 1
   anger: 0
+<<<<<<< HEAD
   emotion: {fileID: 114444479218458070}
 --- !u!114 &114444479218458070
+=======
+--- !u!114 &114037952693773532
+>>>>>>> f079b4420b38907d9ac5ddf4299b7a41ce026cdf
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1531999105096134}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -526,6 +532,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b90876ecc44fcb42967e01818f7ef53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+  m_GameObject: {fileID: 1798156031846214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a942bf8fba5256f4693902ceb773dd4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasInteraction2: 0
+  canBePickedUp: 0
+  successRatio: 10
+  neutralRatio: 30
+  failRatio: 100
+  healthImpact: 5
+>>>>>>> f079b4420b38907d9ac5ddf4299b7a41ce026cdf
 --- !u!136 &136225881172344742
 CapsuleCollider:
   m_ObjectHideFlags: 1

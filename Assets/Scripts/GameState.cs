@@ -16,12 +16,18 @@ public class GameState : MonoBehaviour {
     public string quitBtn = "Quit";
 
     //State Variables
-    public int mentalHealthScore;
+    //Basic counter for how the player's mental health/anxiety is going
+    public int mentalHealthScore = 100;
+    //Is the player currently holding an item
+    public bool isHoldingItem = false;
+    //Is the player doing an action (use to prevent triggers while performing action)
+    public bool isActing = false;
+    //How long in seconds between interactions before anxiety kicks in
+    public int idleAnxietyTime = 5;
 
     // Use this for initialization
     void Start () {
         //Set starting status variables
-        mentalHealthScore = 100;
 	}
 
 	// Update is called once per frame
@@ -49,20 +55,55 @@ public class GameState : MonoBehaviour {
         {
             PlayBalconyPrompt();
         }
+    }
 
-        if (Input.GetButtonUp(Interact1Btn))
+    public void UpdateMentalHealthScore(int modifier)
+    {
+        mentalHealthScore = mentalHealthScore + modifier;
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        //print("Collided with " + col);
+        if (col.gameObject.tag == "PartyGoer" || col.gameObject.tag == "interactable")
         {
-            print("Interact 1");
+            //Display interaction context menu
         }
+    }
 
-        if (Input.GetButtonUp(Interact2Btn))
+    private void OnTriggerStay(Collider col)
+    {
+        //print("Collided with " + col);
+        if (col.gameObject.tag == "PartyGoer" || col.gameObject.tag == "interactable")
         {
-            print("Interact 2");
+            if (Input.GetButtonUp(Interact1Btn))
+            {
+                //Perform Interact 1 actions for collided object
+                print("Interact 1");
+                col.gameObject.GetComponent<InteractableEntity>().Interact("Interact1", this.gameObject);
+            }
+
+            if (Input.GetButtonUp(Interact2Btn))
+            {
+                //Perform Interact 2 actions for collided object
+                print("Interact 2");
+                col.gameObject.GetComponent<InteractableEntity>().Interact("Interact2", this.gameObject);
+            }
+
+            if (Input.GetButtonUp(TakeGiveBtn))
+            {
+                //Take the object or give currently held object
+                print("Interact Take Give");
+                col.gameObject.GetComponent<InteractableEntity>().Interact("TakeGive", this.gameObject);
+            }
         }
-
-        if (Input.GetButtonUp(TakeGiveBtn))
+    }
+    
+    private void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.tag == "Partygoer" || col.gameObject.tag == "interactable")
         {
-            print("Interact Take Give");
+            //Display interaction context menu
         }
     }
 
