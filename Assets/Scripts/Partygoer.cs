@@ -9,10 +9,11 @@ public class Partygoer : MonoBehaviour {
 	public Animator Rig;
 	public MeshRenderer triggerMesh;
 	public bool randomMood;
-	public float anger; // 0-1 scale of how aggressive the AI is towards the player. 0 is dismissve, 1 is a bumrush towards the player
+	public float anger; // 0-1 scale of how aggressive the AI is towards the player. 0 is dismissve, 1 is a bumrush towards the player.
 	float minSpeed;
 	float maxSpeed;
 	GameObject player;
+	public EmoteBubble emotion;
 
 	void Awake () {
 		triggerMesh.enabled = false;
@@ -27,7 +28,11 @@ public class Partygoer : MonoBehaviour {
 		maxSpeed = AI.speed;
 		minSpeed = AI.speed * 0.75f;
 
-		InvokeRepeating ("Move", 0, (2f - anger) + Random.Range (0.1f, 2f));
+		InvokeRepeating ("Move", 0, (4f - anger) + Random.Range (0.1f, 2f));
+	}
+
+	void Update () {
+		anger += 0.003f * Time.deltaTime;
 	}
 
 	public void Move () {
@@ -44,10 +49,11 @@ public class Partygoer : MonoBehaviour {
 	private void OnTriggerEnter (Collider other) {
 
 		if (other.gameObject.tag == "partyGoer") { // if the partygoer runs into another partygoer
-
-			Debug.Log ("Trigger");
-			if (Random.Range (0f, 1f) <= anger) {
+			if (Random.Range (0f, 1f) <= anger / 2f) {
 				AI.destination = other.gameObject.transform.position; // "Angry" partygoers will act selfishly and flock to other players
+			}
+			if (Random.Range (0f, 1f) <= anger / 2f) { // maybe say hi
+				emotion.Emote ("Yes");
 			}
 		}
 		if (other.gameObject.tag == "outerPlayer") { // if the partygoer runs into another player
@@ -56,12 +62,18 @@ public class Partygoer : MonoBehaviour {
 				AI.speed = minSpeed;
 				AI.destination = other.gameObject.transform.position; // "Angry" partygoers will walk towards the player
 			}
+			if (Random.Range (0f, 1f) <= anger) { // maybe say what
+				emotion.Emote ("Maybe");
+			}
 		}
 		if (other.gameObject.tag == "intimatePlayer") { // if the partygoer gets too close to the player
 
 			if (Random.Range (0f, 1f) <= anger) {
 				// Play freakout anim
 				DepressPlayer (anger);
+			}
+			if (Random.Range (0f, 1f) <= anger) { // maybe say fuck off
+				emotion.Emote ("No");
 			}
 		}
 	}
