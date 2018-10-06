@@ -65,14 +65,18 @@ public class GameState : MonoBehaviour {
 
     private void OnTriggerEnter (Collider col) {
         //print("Collided with " + col);
-        if (col.gameObject.tag == "intimatePartygoer" || col.gameObject.tag == "interactable") {
+        if (col.gameObject.tag == "intimatePartygoer" && col.gameObject.GetComponentInParent<Partygoer>().anger < 0.8 || 
+            col.gameObject.tag == "interactable") {
+
             //Display interaction context menu
         }
     }
 
     private void OnTriggerStay (Collider col) {
         //print("Collided with " + col);
-        if (col.gameObject.tag == "intimatePartygoer" || col.gameObject.tag == "interactable") {
+        if (col.gameObject.tag == "intimatePartygoer" && col.gameObject.GetComponentInParent<Partygoer>().anger < 0.8 ||
+            col.gameObject.tag == "interactable") {
+
             if (Input.GetButtonUp (Interact1Btn) && Time.time > interactionCooldown) {
                 //Perform Interact 1 actions for collided object
                 //print("Interact 1");
@@ -89,21 +93,39 @@ public class GameState : MonoBehaviour {
                 interactionCooldown = Time.time + 0.5f;
             }
 
-            if (Input.GetButtonUp (TakeGiveBtn) && Time.time > interactionCooldown && 
-                col.gameObject.GetComponent<InteractableEntity>().canBePickedUp == true &&
-                isHoldingItem == false)
+            if (Input.GetButtonUp (TakeGiveBtn) && Time.time > interactionCooldown)
             {
-                //Take the object or give currently held object
-                //print("Interact Take Give");
-                col.gameObject.GetComponent<InteractableEntity> ().Interact ("TakeGive", this.gameObject);
-                interactionCooldown = Time.time + 0.5f;
+                //Player can pick up the item
+                if (col.gameObject.GetComponent<InteractableEntity>().canBePickedUp == true && isHoldingItem == false)
+                {
+                    //Give player object
+                    print("player took item");
+                    isHoldingItem = true;
+
+                    //Interaction with object
+                    col.gameObject.GetComponent<InteractableEntity>().Interact("Take", this.gameObject);
+                    interactionCooldown = Time.time + 0.5f;
+                }
+
+                //Player can give item
+                else if (col.gameObject.GetComponent<InteractableEntity>().canReceive == true && isHoldingItem == true) 
+                {
+                    //Give player object
+                    print("player gave item");
+                    isHoldingItem = false;
+
+                    col.gameObject.GetComponent<InteractableEntity>().Interact("Give", this.gameObject);
+                    interactionCooldown = Time.time + 0.5f;
+                }
             }
         }
     }
 
     private void OnTriggerExit (Collider col) {
-        if (col.gameObject.tag == "intimatePartygoer" || col.gameObject.tag == "interactable") {
-            //Display interaction context menu
+        if (col.gameObject.tag == "intimatePartygoer" ||
+            col.gameObject.tag == "interactable") {
+
+            //Hide interaction context menu
         }
     }
 
