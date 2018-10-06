@@ -8,6 +8,9 @@ public class GameState : MonoBehaviour {
     //Input
     public string horizontalBtn = "Horizontal";
     public string verticalBtn = "Vertical";
+    public string Interact1Btn = "Interact1";
+    public string Interact2Btn = "Interact2";
+    public string TakeGiveBtn = "TakeGive";
 
     public string startBtn = "Submit";
     public string quitBtn = "Quit";
@@ -45,6 +48,21 @@ public class GameState : MonoBehaviour {
         if (mentalHealthScore <= 0)
         {
             PlayBalconyPrompt();
+        }
+
+        if (Input.GetButtonUp(Interact1Btn))
+        {
+            print("Interact 1");
+        }
+
+        if (Input.GetButtonUp(Interact2Btn))
+        {
+            print("Interact 2");
+        }
+
+        if (Input.GetButtonUp(TakeGiveBtn))
+        {
+            print("Interact Take Give");
         }
     }
 
