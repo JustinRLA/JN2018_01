@@ -91,6 +91,13 @@ public class Partygoer : MonoBehaviour {
 
     public void SetMood(float modifier)
     {
-        anger = anger + modifier;
+        if(anger < 1.0) //Prevent angry characters from reacting to you
+        {
+            anger = anger + modifier;
+            if (anger >= 1.0)
+            {
+                //!!!Add angry reaction (character was not angry before but has become angry)
+            }
+        }
     }
 }
