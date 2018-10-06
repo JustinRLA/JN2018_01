@@ -1,167 +1,157 @@
 fileFormatVersion: 2
-guid: ae15186131a06f7489bbb5dad607b6ae
+guid: 9683f4e231210c34483eb5c8498a8bd9
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: BaseChar_Unboned:BaseCharacter
-    100002: Head
-    100004: Hips
-    100006: LeftArm
-    100008: LeftFoot
-    100010: LeftForeArm
-    100012: LeftHand
-    100014: LeftLeg
-    100016: LeftShoulder
-    100018: LeftToeBase
-    100020: LeftUpLeg
-    100022: Neck
-    100024: //RootNode
-    100026: QuickRigCharacter_Guides
-    100028: QuickRigCharacter_Head
-    100030: QuickRigCharacter_Hips
-    100032: QuickRigCharacter_LeftArm
-    100034: QuickRigCharacter_LeftFoot
-    100036: QuickRigCharacter_LeftForeArm
-    100038: QuickRigCharacter_LeftHand
-    100040: QuickRigCharacter_LeftLeg
-    100042: QuickRigCharacter_LeftShoulder
-    100044: QuickRigCharacter_LeftToeBase
-    100046: QuickRigCharacter_LeftUpLeg
-    100048: QuickRigCharacter_Neck
-    100050: QuickRigCharacter_Reference
-    100052: QuickRigCharacter_RightArm
-    100054: QuickRigCharacter_RightFoot
-    100056: QuickRigCharacter_RightForeArm
-    100058: QuickRigCharacter_RightHand
-    100060: QuickRigCharacter_RightLeg
-    100062: QuickRigCharacter_RightShoulder
-    100064: QuickRigCharacter_RightToeBase
-    100066: QuickRigCharacter_RightUpLeg
-    100068: QuickRigCharacter_Spine
-    100070: QuickRigCharacter_Spine1
-    100072: QuickRigCharacter_Spine2
-    100074: Reference
-    100076: RightArm
-    100078: RightFoot
-    100080: RightForeArm
-    100082: RightHand
-    100084: RightLeg
-    100086: RightShoulder
-    100088: RightToeBase
-    100090: RightUpLeg
-    100092: Spine
-    100094: Spine1
-    100096: Spine2
-    100098: Accesoires
-    100100: BaseCharacter
-    100102: BaseCharacter 1
-    100104: Beanie
-    100106: Bun
-    100108: Cap
-    100110: Collets
-    100112: Ecouteurs
-    100114: Face
-    100116: Polo
-    100118: Ponytail
-    100120: Round
-    100122: V
-    400000: BaseChar_Unboned:BaseCharacter
-    400002: Head
-    400004: Hips
-    400006: LeftArm
-    400008: LeftFoot
-    400010: LeftForeArm
-    400012: LeftHand
-    400014: LeftLeg
-    400016: LeftShoulder
-    400018: LeftToeBase
-    400020: LeftUpLeg
-    400022: Neck
-    400024: //RootNode
-    400026: QuickRigCharacter_Guides
-    400028: QuickRigCharacter_Head
-    400030: QuickRigCharacter_Hips
-    400032: QuickRigCharacter_LeftArm
-    400034: QuickRigCharacter_LeftFoot
-    400036: QuickRigCharacter_LeftForeArm
-    400038: QuickRigCharacter_LeftHand
-    400040: QuickRigCharacter_LeftLeg
-    400042: QuickRigCharacter_LeftShoulder
-    400044: QuickRigCharacter_LeftToeBase
-    400046: QuickRigCharacter_LeftUpLeg
-    400048: QuickRigCharacter_Neck
-    400050: QuickRigCharacter_Reference
-    400052: QuickRigCharacter_RightArm
-    400054: QuickRigCharacter_RightFoot
-    400056: QuickRigCharacter_RightForeArm
-    400058: QuickRigCharacter_RightHand
-    400060: QuickRigCharacter_RightLeg
-    400062: QuickRigCharacter_RightShoulder
-    400064: QuickRigCharacter_RightToeBase
-    400066: QuickRigCharacter_RightUpLeg
-    400068: QuickRigCharacter_Spine
-    400070: QuickRigCharacter_Spine1
-    400072: QuickRigCharacter_Spine2
-    400074: Reference
-    400076: RightArm
-    400078: RightFoot
-    400080: RightForeArm
-    400082: RightHand
-    400084: RightLeg
-    400086: RightShoulder
-    400088: RightToeBase
-    400090: RightUpLeg
-    400092: Spine
-    400094: Spine1
-    400096: Spine2
-    400098: Accesoires
-    400100: BaseCharacter
-    400102: BaseCharacter 1
-    400104: Beanie
-    400106: Bun
-    400108: Cap
-    400110: Collets
-    400112: Ecouteurs
-    400114: Face
-    400116: Polo
-    400118: Ponytail
-    400120: Round
-    400122: V
-    2100000: lambert1
+    100000: Accesoires
+    100002: //RootNode
+    100004: BaseCharacter
+    100006: BaseCharacter 1
+    100008: Beanie
+    100010: Bun
+    100012: Cap
+    100014: Collets
+    100016: Ecouteurs
+    100018: Face
+    100020: Head
+    100022: Hips
+    100024: LeftArm
+    100026: LeftFoot
+    100028: LeftForeArm
+    100030: LeftHand
+    100032: LeftLeg
+    100034: LeftShoulder
+    100036: LeftToeBase
+    100038: LeftUpLeg
+    100040: Neck
+    100042: Polo
+    100044: Ponytail
+    100046: QuickRigCharacter_Guides
+    100048: QuickRigCharacter_Head
+    100050: QuickRigCharacter_Hips
+    100052: QuickRigCharacter_LeftArm
+    100054: QuickRigCharacter_LeftFoot
+    100056: QuickRigCharacter_LeftForeArm
+    100058: QuickRigCharacter_LeftHand
+    100060: QuickRigCharacter_LeftLeg
+    100062: QuickRigCharacter_LeftShoulder
+    100064: QuickRigCharacter_LeftToeBase
+    100066: QuickRigCharacter_LeftUpLeg
+    100068: QuickRigCharacter_Neck
+    100070: QuickRigCharacter_Reference
+    100072: QuickRigCharacter_RightArm
+    100074: QuickRigCharacter_RightFoot
+    100076: QuickRigCharacter_RightForeArm
+    100078: QuickRigCharacter_RightHand
+    100080: QuickRigCharacter_RightLeg
+    100082: QuickRigCharacter_RightShoulder
+    100084: QuickRigCharacter_RightToeBase
+    100086: QuickRigCharacter_RightUpLeg
+    100088: QuickRigCharacter_Spine
+    100090: QuickRigCharacter_Spine1
+    100092: QuickRigCharacter_Spine2
+    100094: Reference
+    100096: RightArm
+    100098: RightFoot
+    100100: RightForeArm
+    100102: RightHand
+    100104: RightLeg
+    100106: RightShoulder
+    100108: RightToeBase
+    100110: RightUpLeg
+    100112: Round
+    100114: Spine
+    100116: Spine1
+    100118: Spine2
+    100120: V
+    400000: Accesoires
+    400002: //RootNode
+    400004: BaseCharacter
+    400006: BaseCharacter 1
+    400008: Beanie
+    400010: Bun
+    400012: Cap
+    400014: Collets
+    400016: Ecouteurs
+    400018: Face
+    400020: Head
+    400022: Hips
+    400024: LeftArm
+    400026: LeftFoot
+    400028: LeftForeArm
+    400030: LeftHand
+    400032: LeftLeg
+    400034: LeftShoulder
+    400036: LeftToeBase
+    400038: LeftUpLeg
+    400040: Neck
+    400042: Polo
+    400044: Ponytail
+    400046: QuickRigCharacter_Guides
+    400048: QuickRigCharacter_Head
+    400050: QuickRigCharacter_Hips
+    400052: QuickRigCharacter_LeftArm
+    400054: QuickRigCharacter_LeftFoot
+    400056: QuickRigCharacter_LeftForeArm
+    400058: QuickRigCharacter_LeftHand
+    400060: QuickRigCharacter_LeftLeg
+    400062: QuickRigCharacter_LeftShoulder
+    400064: QuickRigCharacter_LeftToeBase
+    400066: QuickRigCharacter_LeftUpLeg
+    400068: QuickRigCharacter_Neck
+    400070: QuickRigCharacter_Reference
+    400072: QuickRigCharacter_RightArm
+    400074: QuickRigCharacter_RightFoot
+    400076: QuickRigCharacter_RightForeArm
+    400078: QuickRigCharacter_RightHand
+    400080: QuickRigCharacter_RightLeg
+    400082: QuickRigCharacter_RightShoulder
+    400084: QuickRigCharacter_RightToeBase
+    400086: QuickRigCharacter_RightUpLeg
+    400088: QuickRigCharacter_Spine
+    400090: QuickRigCharacter_Spine1
+    400092: QuickRigCharacter_Spine2
+    400094: Reference
+    400096: RightArm
+    400098: RightFoot
+    400100: RightForeArm
+    400102: RightHand
+    400104: RightLeg
+    400106: RightShoulder
+    400108: RightToeBase
+    400110: RightUpLeg
+    400112: Round
+    400114: Spine
+    400116: Spine1
+    400118: Spine2
+    400120: V
+    2100000: Visage
     2100002: Base
-    2100004: Visage
+    2100004: M_Pants
     2100006: Details
-    2100008: M_Pants
-    4300000: BaseChar_Unboned:BaseCharacter
-    4300002: BaseCharacter
-    4300004: Face
-    4300006: Polo
-    4300008: Round
-    4300010: V
-    4300012: Cap
-    4300014: Beanie
-    4300016: Bun
-    4300018: Ecouteurs
-    4300020: Ponytail
+    4300000: BaseCharacter
+    4300002: Face
+    4300004: Polo
+    4300006: Round
+    4300008: V
+    4300010: Cap
+    4300012: Beanie
+    4300014: Bun
+    4300016: Ecouteurs
+    4300018: Ponytail
+    7400000: Anim_HeadYes
     9500000: //RootNode
-    13700000: BaseChar_Unboned:BaseCharacter
-    13700002: BaseCharacter 1
-    13700004: Beanie
-    13700006: Bun
-    13700008: Cap
-    13700010: Ecouteurs
-    13700012: Face
-    13700014: Polo
-    13700016: Ponytail
-    13700018: Round
-    13700020: V
-    2186277476908879412: ImportLogs
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: fe9033bbc02089c45bdc377c46b76dcf, type: 2}
+    13700000: BaseCharacter 1
+    13700002: Beanie
+    13700004: Bun
+    13700006: Cap
+    13700008: Ecouteurs
+    13700010: Face
+    13700012: Polo
+    13700014: Ponytail
+    13700016: Round
+    13700018: V
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -181,14 +171,42 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Anim_HeadYes
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -219,8 +237,8 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
-  copyAvatar: 0
+  importAnimation: 1
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 2
     human:
@@ -703,7 +721,8 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: ae15186131a06f7489bbb5dad607b6ae,
+    type: 3}
   animationType: 3
   humanoidOversampling: 1
   additionalBone: 0

@@ -6,7 +6,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class GameStatePostProcessAdjust : MonoBehaviour {
 
 	public GameState game;
-	public PostProcessVolume pp;
+	public PostProcessVolume ppvs;
 
 	void Start () {
 		if (game == null) {
@@ -14,9 +14,9 @@ public class GameStatePostProcessAdjust : MonoBehaviour {
 		}
 	}
 
-	// Update is called once per frame
 	void Update () {
-		pp.weight = 1 - (game.mentalHealthScore / 100f);
+
+		ppvs.weight = Mathf.Clamp (1f - game.mentalHealthScore / 100f, 0.01f, 1f);
 
 	}
 }
