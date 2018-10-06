@@ -128,6 +128,7 @@ public class GameState : MonoBehaviour {
             if (Input.GetButtonUp (Interact1Btn) && !playerOnCooldown) {
                 //Perform Interact 1 actions for collided object
                 //print("Interact 1");
+                //!!! Player interaction 1 animation
                 StartCoroutine(ActionCooldown());
                 col.gameObject.GetComponent<InteractableEntity> ().Interact ("Interact1", this.gameObject);
                 
@@ -138,6 +139,7 @@ public class GameState : MonoBehaviour {
             {
                 //Perform Interact 2 actions for collided object
                 //print("Interact 2");
+                //!!! Player interaction 2 animation
                 col.gameObject.GetComponent<InteractableEntity> ().Interact ("Interact2", this.gameObject);
                 StartCoroutine(ActionCooldown());
             }
@@ -147,6 +149,7 @@ public class GameState : MonoBehaviour {
                 //Player can pick up the item
                 if (col.gameObject.GetComponent<InteractableEntity>().canBePickedUp == true && isHoldingItem == false)
                 {
+                    //!!! Player take item animation
                     //Give player object
                     print("player took item");
                     isHoldingItem = true;
@@ -159,6 +162,7 @@ public class GameState : MonoBehaviour {
                 //Player can give item
                 else if (col.gameObject.GetComponent<InteractableEntity>().canReceive == true && isHoldingItem == true) 
                 {
+                    //!!! Player give item animation
                     //Give player object
                     print("player gave item");
                     isHoldingItem = false;
