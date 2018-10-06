@@ -26,6 +26,10 @@ public class GameState : MonoBehaviour {
     public bool isActing = false;
     //How long in seconds between interactions before anxiety kicks in
     public int idleAnxietyTime = 5;
+    //The mental health score needed to make balcony accessible
+    public int balconyAccessible = 10;
+    //The mental health score needed to trigger everyone being mad and making balcony the only remaining option
+    public int goodEndTrigger = 0;
 
     // Use this for initialization
     void Start () {
@@ -46,8 +50,12 @@ public class GameState : MonoBehaviour {
         }
 
         //Trigger Balcony Prompt
-        if (mentalHealthScore <= 10) {
+        if (mentalHealthScore <= goodEndTrigger) {
             PlayBalconyPrompt ();
+        }
+        else if (mentalHealthScore <= balconyAccessible)
+        {
+            //Make balcony available interaction for the player
         }
     }
 
@@ -57,14 +65,14 @@ public class GameState : MonoBehaviour {
 
     private void OnTriggerEnter (Collider col) {
         //print("Collided with " + col);
-        if (col.gameObject.tag == "partyGoer" || col.gameObject.tag == "interactable") {
+        if (col.gameObject.tag == "intimatePartygoer" || col.gameObject.tag == "interactable") {
             //Display interaction context menu
         }
     }
 
     private void OnTriggerStay (Collider col) {
         //print("Collided with " + col);
-        if (col.gameObject.tag == "partyGoer" || col.gameObject.tag == "interactable") {
+        if (col.gameObject.tag == "intimatePartygoer" || col.gameObject.tag == "interactable") {
             if (Input.GetButtonUp (Interact1Btn) && Time.time > interactionCooldown) {
                 //Perform Interact 1 actions for collided object
                 //print("Interact 1");
@@ -72,7 +80,8 @@ public class GameState : MonoBehaviour {
                 interactionCooldown = Time.time + 0.5f;
             }
 
-            if (Input.GetButtonUp(Interact2Btn) && Time.time > interactionCooldown && col.gameObject.GetComponent<InteractableEntity>().hasInteraction2 == true)
+            if (Input.GetButtonUp(Interact2Btn) && Time.time > interactionCooldown &&
+                col.gameObject.GetComponent<InteractableEntity>().hasInteraction2 == true)
             {
                 //Perform Interact 2 actions for collided object
                 //print("Interact 2");
@@ -80,7 +89,10 @@ public class GameState : MonoBehaviour {
                 interactionCooldown = Time.time + 0.5f;
             }
 
-            if (Input.GetButtonUp (TakeGiveBtn) && Time.time > interactionCooldown) {
+            if (Input.GetButtonUp (TakeGiveBtn) && Time.time > interactionCooldown && 
+                col.gameObject.GetComponent<InteractableEntity>().canBePickedUp == true &&
+                isHoldingItem == false)
+            {
                 //Take the object or give currently held object
                 //print("Interact Take Give");
                 col.gameObject.GetComponent<InteractableEntity> ().Interact ("TakeGive", this.gameObject);
@@ -90,7 +102,7 @@ public class GameState : MonoBehaviour {
     }
 
     private void OnTriggerExit (Collider col) {
-        if (col.gameObject.tag == "partygoer" || col.gameObject.tag == "interactable") {
+        if (col.gameObject.tag == "intimatePartygoer" || col.gameObject.tag == "interactable") {
             //Display interaction context menu
         }
     }
