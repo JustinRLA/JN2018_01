@@ -10,6 +10,8 @@ TagManager:
   - outerPlayer
   - interactable
   - intimatePartygoer
+  - floor
+  - wall
   layers:
   - Default
   - TransparentFX
@@ -21,9 +23,9 @@ TagManager:
   - 
   - PostProcess
   - EmoteBubbles
-  - 
-  - 
-  - 
+  - floor
+  - walls
+  - doors
   - 
   - 
   - 
