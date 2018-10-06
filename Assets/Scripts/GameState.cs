@@ -43,12 +43,6 @@ public class GameState : MonoBehaviour {
         //Manual Win
         if (Input.GetButtonUp(startBtn))
         {
-            Win();
-        }
-
-        //Manual Main Menu return
-        if (Input.GetKeyUp("space"))
-        {
             MainMenu();
         }
 
@@ -86,7 +80,7 @@ public class GameState : MonoBehaviour {
                 interactionCooldown = Time.time + 0.5f;
             }
 
-            if (Input.GetButtonUp(Interact2Btn) && Time.time > interactionCooldown)
+            if (Input.GetButtonUp(Interact2Btn) && Time.time > interactionCooldown && col.gameObject.GetComponent<InteractableEntity>().hasInteraction2 == true)
             {
                 //Perform Interact 2 actions for collided object
                 //print("Interact 2");
@@ -123,8 +117,10 @@ public class GameState : MonoBehaviour {
     //When player has entered the balcony (to trigger the cutscene)
     void PlayEndingSequence()
     {
-        print("Player is ready for ending sequence");
+        //Trigger by interaction with balcony area
+        print("Player is on the balcony");
         //Play balcony cinematic
+        //Go to end screen (Win)
         Win();
     }
 
