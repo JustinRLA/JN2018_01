@@ -885,6 +885,7 @@ GameObject:
   - component: {fileID: 114318373851995322}
   - component: {fileID: 136691575548144632}
   - component: {fileID: 114011148512622246}
+  - component: {fileID: 114134116272877614}
   m_Layer: 0
   m_Name: Prefab_Partygoer
   m_TagString: intimatePartygoer
@@ -993,6 +994,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4138886552009642}
   - component: {fileID: 137579327961667820}
+  - component: {fileID: 114713361132755104}
   m_Layer: 0
   m_Name: BaseCharacter 1
   m_TagString: Untagged
@@ -2204,7 +2206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AI: {fileID: 195203719472105354}
-  Rig: {fileID: 0}
+  Rig: {fileID: 95263767207197496}
   triggerMesh: {fileID: 23594090550003672}
   randomMood: 1
   anger: 0
@@ -2262,6 +2264,39 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 68f7e2fcb133fa54aba8a7e37ba7f266, type: 2}
   - {fileID: 2100000, guid: c79e0939aef79ec4eacbaf47493f7626, type: 2}
   - {fileID: 2100000, guid: 353378a7e178c7b4f9256bd1b171a279, type: 2}
+--- !u!114 &114134116272877614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798156031846214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a964010f8f13094f98a1e4ca3fce1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  hats:
+  - {fileID: 1955345509789508}
+  - {fileID: 1299193868032550}
+  - {fileID: 1571145874701828}
+  - {fileID: 1187655569992470}
+  - {fileID: 1767833567432626}
+  collars:
+  - {fileID: 1245257165177024}
+  - {fileID: 1031017735555668}
+  - {fileID: 1187383371133884}
+  BodyMaterials: {fileID: 137579327961667820}
+  accessoryColors:
+  - {r: 0.5566038, g: 0.41745284, b: 0.41745284, a: 1}
+  - {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
+  - {r: 0.40330186, g: 0.43740988, b: 0.5377358, a: 1}
+  - {r: 0.6226415, g: 0.59771293, b: 0.36712354, a: 1}
+  - {r: 0.35764506, g: 0.5377358, b: 0.40266773, a: 1}
+  - {r: 0.49056602, g: 0.42482147, b: 0.40957633, a: 1}
+  - {r: 0.42873427, g: 0.38443395, b: 0.5, a: 1}
+  - {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+  - {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
 --- !u!114 &114318373851995322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2290,6 +2325,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 95263767207197496}
+--- !u!114 &114713361132755104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958069787730552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b3ecf0d0c5dc7b44857cbb242fc917f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outfitColors:
+  - {r: 0.35359558, g: 0.3985791, b: 0.5471698, a: 1}
+  - {r: 0.34927908, g: 0.39758402, b: 0.4433962, a: 1}
+  - {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
+  - {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
+  - {r: 0.4245283, g: 0.22227661, b: 0.22227661, a: 1}
+  - {r: 0.28128338, g: 0.34400073, b: 0.4056604, a: 1}
+  - {r: 0.3018868, g: 0.25065577, b: 0.19508722, a: 1}
+  - {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
+  - {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 1}
+  - {r: 0.4811321, g: 0.44779164, b: 0.36992702, a: 1}
+  skinColors:
+  - {r: 0.8962264, g: 0.79151314, b: 0.75671947, a: 1}
+  - {r: 1, g: 0.8039216, b: 0.5803922, a: 1}
+  - {r: 0.91764706, g: 0.7529412, b: 0.5254902, a: 1}
+  - {r: 1, g: 0.6784314, b: 0.3764706, a: 1}
+  - {r: 1, g: 0.8901961, b: 0.62352943, a: 1}
+  - {r: 0.3254902, g: 0.21568628, b: 0.08235294, a: 1}
+  - {r: 0.70980394, g: 0.47058824, b: 0.32156864, a: 1}
+  - {r: 0.8, g: 0.64705884, b: 0.5176471, a: 1}
+  recolouredCollars:
+  - {fileID: 1245257165177024}
+  - {fileID: 1031017735555668}
+  - {fileID: 1187383371133884}
 --- !u!136 &136225881172344742
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2331,7 +2401,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100006, guid: ae15186131a06f7489bbb5dad607b6ae, type: 3}
+  - {fileID: 2100000, guid: 5e7d0339d8cacd3429a70162f8fe6fa5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2383,7 +2453,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: ae15186131a06f7489bbb5dad607b6ae, type: 3}
+  - {fileID: 2100000, guid: 07230d424bb9cd44ba9a1284201136b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2435,7 +2505,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100006, guid: ae15186131a06f7489bbb5dad607b6ae, type: 3}
+  - {fileID: 2100000, guid: 5e7d0339d8cacd3429a70162f8fe6fa5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2489,7 +2559,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100006, guid: ae15186131a06f7489bbb5dad607b6ae, type: 3}
+  - {fileID: 2100000, guid: 5e7d0339d8cacd3429a70162f8fe6fa5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2543,7 +2613,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100006, guid: ae15186131a06f7489bbb5dad607b6ae, type: 3}
+  - {fileID: 2100000, guid: 5e7d0339d8cacd3429a70162f8fe6fa5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2597,7 +2667,9 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100002, guid: ae15186131a06f7489bbb5dad607b6ae, type: 3}
+  - {fileID: 2100000, guid: e5156292a9eeaab49af76076ac65b193, type: 2}
+  - {fileID: 2100000, guid: 3bf2c2fede3ea2442b6a8ff6caf4feb2, type: 2}
+  - {fileID: 2100000, guid: b722b3f3c9905b045ab5e2943560f94b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2664,7 +2736,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100006, guid: ae15186131a06f7489bbb5dad607b6ae, type: 3}
+  - {fileID: 2100000, guid: 5e7d0339d8cacd3429a70162f8fe6fa5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2716,7 +2788,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100006, guid: ae15186131a06f7489bbb5dad607b6ae, type: 3}
+  - {fileID: 2100000, guid: 5e7d0339d8cacd3429a70162f8fe6fa5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2768,7 +2840,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100006, guid: ae15186131a06f7489bbb5dad607b6ae, type: 3}
+  - {fileID: 2100000, guid: 5e7d0339d8cacd3429a70162f8fe6fa5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2820,7 +2892,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100006, guid: ae15186131a06f7489bbb5dad607b6ae, type: 3}
+  - {fileID: 2100000, guid: 5e7d0339d8cacd3429a70162f8fe6fa5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

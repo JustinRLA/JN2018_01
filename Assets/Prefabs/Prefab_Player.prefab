@@ -884,6 +884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4806034450973388}
   - component: {fileID: 137972325972849206}
+  - component: {fileID: 114281131685707370}
   m_Layer: 0
   m_Name: BaseCharacter 1
   m_TagString: Untagged
@@ -1013,6 +1014,8 @@ GameObject:
   - component: {fileID: 114144608412471272}
   - component: {fileID: 114738218851577258}
   - component: {fileID: 114222613460952564}
+  - component: {fileID: 114001748329092620}
+  - component: {fileID: 114465689942368752}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2265,6 +2268,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114001748329092620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922525262728498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a964010f8f13094f98a1e4ca3fce1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  hats: []
+  collars: []
+  BodyMaterials: {fileID: 0}
+  accessoryColors: []
 --- !u!114 &114027169355325642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2308,7 +2327,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game: {fileID: 114738218851577258}
-  pp: {fileID: 114875823742449738}
+  ppvs: {fileID: 114875823742449738}
+--- !u!114 &114281131685707370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1808467644282356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b3ecf0d0c5dc7b44857cbb242fc917f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outfitColors:
+  - {r: 0.35359558, g: 0.3985791, b: 0.5471698, a: 1}
+  - {r: 0.34927908, g: 0.39758402, b: 0.4433962, a: 1}
+  - {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
+  - {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
+  - {r: 0.4245283, g: 0.22227661, b: 0.22227661, a: 1}
+  - {r: 0.28128338, g: 0.34400073, b: 0.4056604, a: 1}
+  - {r: 0.3018868, g: 0.25065577, b: 0.19508722, a: 1}
+  - {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
+  - {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 1}
+  - {r: 0.4811321, g: 0.44779164, b: 0.36992702, a: 1}
+  skinColors:
+  - {r: 0.8962264, g: 0.79151314, b: 0.75671947, a: 1}
+  - {r: 1, g: 0.8039216, b: 0.5803922, a: 1}
+  - {r: 0.91764706, g: 0.7529412, b: 0.5254902, a: 1}
+  - {r: 1, g: 0.6784314, b: 0.3764706, a: 1}
+  - {r: 1, g: 0.8901961, b: 0.62352943, a: 1}
+  - {r: 0.3254902, g: 0.21568628, b: 0.08235294, a: 1}
+  - {r: 0.70980394, g: 0.47058824, b: 0.32156864, a: 1}
+  - {r: 0.8, g: 0.64705884, b: 0.5176471, a: 1}
+  recolouredCollars:
+  - {fileID: 1356811024570798}
+  - {fileID: 1352834500492088}
+  - {fileID: 1624045928835106}
 --- !u!114 &114302332202881642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2341,6 +2395,37 @@ MonoBehaviour:
   m_TiltMin: 45
   m_LockCursor: 1
   m_VerticalAutoReturn: 0
+--- !u!114 &114465689942368752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922525262728498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a964010f8f13094f98a1e4ca3fce1e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  hats:
+  - {fileID: 1909641817593832}
+  - {fileID: 1903542779084958}
+  - {fileID: 1050128147274938}
+  collars:
+  - {fileID: 1356811024570798}
+  - {fileID: 1352834500492088}
+  - {fileID: 1624045928835106}
+  BodyMaterials: {fileID: 137972325972849206}
+  accessoryColors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0.55344284, b: 0, a: 1}
+  - {r: 0.85599875, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.7210716, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.39687634, a: 1}
+  - {r: 0.689497, g: 0, b: 1, a: 1}
+  - {r: 0, g: 0.33205748, b: 1, a: 1}
+  - {r: 0, g: 0.6036329, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0.49383736, a: 1}
 --- !u!114 &114524870429561778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2402,6 +2487,8 @@ MonoBehaviour:
   mentalHealthScore: 100
   isHoldingItem: 0
   isActing: 0
+  healthDecay: 0.01
+  isNotGettingAnxious: 0
   idleAnxietyTime: 5
   balconyAccessible: 10
   goodEndTrigger: 0
@@ -2437,11 +2524,11 @@ MonoBehaviour:
   volumeLayer:
     serializedVersion: 2
     m_Bits: 256
-  stopNaNPropagation: 1
+  stopNaNPropagation: 0
   antialiasingMode: 3
   temporalAntialiasing:
     jitterSpread: 0.75
-    sharpness: 0.46
+    sharpness: 0.59
     stationaryBlending: 0.95
     motionBlending: 0.85
   subpixelMorphologicalAntialiasing:
@@ -2450,7 +2537,7 @@ MonoBehaviour:
     fastMode: 0
     keepAlpha: 0
   fog:
-    enabled: 1
+    enabled: 0
     excludeSkybox: 1
   debugLayer:
     lightMeter:
@@ -2610,7 +2697,7 @@ SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1066339326840532}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2725,7 +2812,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100004, guid: ae15186131a06f7489bbb5dad607b6ae, type: 3}
+  - {fileID: 2100000, guid: 07230d424bb9cd44ba9a1284201136b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2768,7 +2855,7 @@ SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1456107385360978}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2989,7 +3076,9 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100002, guid: ae15186131a06f7489bbb5dad607b6ae, type: 3}
+  - {fileID: 2100000, guid: e5156292a9eeaab49af76076ac65b193, type: 2}
+  - {fileID: 2100000, guid: 3bf2c2fede3ea2442b6a8ff6caf4feb2, type: 2}
+  - {fileID: 2100000, guid: b722b3f3c9905b045ab5e2943560f94b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
