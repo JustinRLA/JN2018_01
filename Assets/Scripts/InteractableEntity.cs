@@ -100,21 +100,31 @@ public class InteractableEntity : MonoBehaviour {
         if (resultScore <= successRatio)
         {
             //Success
-            print("player succeeded");
+            print("player succeeded with " + this.gameObject.name);
             //Play success interaction animation
             player.GetComponent<GameState>().UpdateMentalHealthScore(healthImpact);
+            //Make partygoer less mad
+            if (interactableType == InteractableType.partygoer)
+            {
+                GetComponent<Partygoer>().SetMood(-healthImpact);
+            }
         }
         else if (resultScore <= neutralRatio)
         {
             //Neutral
-            print("player was neutral");
+            print("player was neutral with " + this.gameObject.name);
         }
         else
         {
             //Fail
-            print("player failed");
+            print("player failed with " + this.gameObject.name);
             //Play success interaction animation
             player.GetComponent<GameState>().UpdateMentalHealthScore(-healthImpact);
+            //Make partygoer mad
+            if(interactableType == InteractableType.partygoer)
+            {
+                GetComponent<Partygoer>().SetMood(1.0f);
+            }
         }
     }
 }

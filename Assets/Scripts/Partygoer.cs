@@ -78,7 +78,7 @@ public class Partygoer : MonoBehaviour {
 		}
 	}
 
-	public Vector3 RandomNavmeshLocation (float radius) {
+    public Vector3 RandomNavmeshLocation (float radius) {
 		Vector3 randomDirection = Random.insideUnitSphere * radius;
 		randomDirection += transform.position;
 		UnityEngine.AI.NavMeshHit hit;
@@ -89,4 +89,8 @@ public class Partygoer : MonoBehaviour {
 		return finalPosition;
 	}
 
+    public void SetMood(float modifier)
+    {
+        anger = anger + modifier;
+    }
 }

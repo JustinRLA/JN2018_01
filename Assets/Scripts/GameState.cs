@@ -15,7 +15,8 @@ public class GameState : MonoBehaviour {
     public string startBtn = "Submit";
     public string quitBtn = "Quit";
 
-    float interactionCooldown = 0f;
+    float interactionCooldown = 0.5f;
+    public bool playerOnCooldown = false;
 
     //State Variables
     //Basic counter for how the player's mental health/anxiety is going
@@ -30,6 +31,9 @@ public class GameState : MonoBehaviour {
     public int balconyAccessible = 10;
     //The mental health score needed to trigger everyone being mad and making balcony the only remaining option
     public int goodEndTrigger = 0;
+
+    //For partygoers that are witnessing your actions
+    public List<GameObject> audience = new List<GameObject>();
 
     // Use this for initialization
     void Start () {
@@ -60,7 +64,18 @@ public class GameState : MonoBehaviour {
     }
 
     public void UpdateMentalHealthScore (int modifier) {
+
+        print("player got " + modifier + " mental health");
+
         mentalHealthScore = mentalHealthScore + modifier;
+        if(modifier < 0)
+        {
+            foreach (GameObject i in audience)
+            {
+                print(i.name + "saw that");
+                i.GetComponentInParent<Partygoer>().SetMood(1.0f);
+            }
+        }
     }
 
     private void OnTriggerEnter (Collider col) {
@@ -70,6 +85,12 @@ public class GameState : MonoBehaviour {
 
             //Display interaction context menu
         }
+        //Partygoers that start looking at you
+        else if (col.gameObject.tag == "partyGoer" && !audience.Contains(col.gameObject))
+        {
+            print(col.gameObject.name + " is watching you");
+            audience.Add(col.gameObject);
+        }
     }
 
     private void OnTriggerStay (Collider col) {
@@ -77,23 +98,24 @@ public class GameState : MonoBehaviour {
         if (col.gameObject.tag == "intimatePartygoer" && col.gameObject.GetComponentInParent<Partygoer>().anger < 0.8 ||
             col.gameObject.tag == "interactable") {
 
-            if (Input.GetButtonUp (Interact1Btn) && Time.time > interactionCooldown) {
+            if (Input.GetButtonUp (Interact1Btn) && !playerOnCooldown) {
                 //Perform Interact 1 actions for collided object
                 //print("Interact 1");
+                StartCoroutine(ActionCooldown());
                 col.gameObject.GetComponent<InteractableEntity> ().Interact ("Interact1", this.gameObject);
-                interactionCooldown = Time.time + 0.5f;
+                
             }
 
-            if (Input.GetButtonUp(Interact2Btn) && Time.time > interactionCooldown &&
+            if (Input.GetButtonUp(Interact2Btn) && !playerOnCooldown &&
                 col.gameObject.GetComponent<InteractableEntity>().hasInteraction2 == true)
             {
                 //Perform Interact 2 actions for collided object
                 //print("Interact 2");
                 col.gameObject.GetComponent<InteractableEntity> ().Interact ("Interact2", this.gameObject);
-                interactionCooldown = Time.time + 0.5f;
+                StartCoroutine(ActionCooldown());
             }
 
-            if (Input.GetButtonUp (TakeGiveBtn) && Time.time > interactionCooldown)
+            if (Input.GetButtonUp (TakeGiveBtn) && !playerOnCooldown)
             {
                 //Player can pick up the item
                 if (col.gameObject.GetComponent<InteractableEntity>().canBePickedUp == true && isHoldingItem == false)
@@ -104,7 +126,7 @@ public class GameState : MonoBehaviour {
 
                     //Interaction with object
                     col.gameObject.GetComponent<InteractableEntity>().Interact("Take", this.gameObject);
-                    interactionCooldown = Time.time + 0.5f;
+                    StartCoroutine(ActionCooldown());
                 }
 
                 //Player can give item
@@ -115,7 +137,7 @@ public class GameState : MonoBehaviour {
                     isHoldingItem = false;
 
                     col.gameObject.GetComponent<InteractableEntity>().Interact("Give", this.gameObject);
-                    interactionCooldown = Time.time + 0.5f;
+                    StartCoroutine(ActionCooldown());
                 }
             }
         }
@@ -126,6 +148,12 @@ public class GameState : MonoBehaviour {
             col.gameObject.tag == "interactable") {
 
             //Hide interaction context menu
+        }
+        //Partygoers that stop looking at you
+        else if (col.gameObject.tag == "partyGoer" && audience.Contains(col.gameObject))
+        {
+            print(col.gameObject.name + " is no longer watching you");
+            audience.Remove(col.gameObject);
         }
     }
 
@@ -165,5 +193,13 @@ public class GameState : MonoBehaviour {
         //Set menu to Main Menu Screen
         ApplicationModel.menuState = 0;
         SceneManager.LoadScene (0);
+    }
+
+    IEnumerator ActionCooldown()
+    {
+        playerOnCooldown = true;
+        //print("player on cooldown");
+        yield return new WaitForSeconds(interactionCooldown);
+        playerOnCooldown = false;
     }
 }
