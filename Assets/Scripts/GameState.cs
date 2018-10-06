@@ -15,6 +15,8 @@ public class GameState : MonoBehaviour {
     public string startBtn = "Submit";
     public string quitBtn = "Quit";
 
+    float interactionCooldown = 0f;
+
     //State Variables
     //Basic counter for how the player's mental health/anxiety is going
     public int mentalHealthScore = 100;
@@ -76,25 +78,28 @@ public class GameState : MonoBehaviour {
         //print("Collided with " + col);
         if (col.gameObject.tag == "PartyGoer" || col.gameObject.tag == "interactable")
         {
-            if (Input.GetButtonUp(Interact1Btn))
+            if (Input.GetButtonUp(Interact1Btn) && Time.time > interactionCooldown)
             {
                 //Perform Interact 1 actions for collided object
-                print("Interact 1");
+                //print("Interact 1");
                 col.gameObject.GetComponent<InteractableEntity>().Interact("Interact1", this.gameObject);
+                interactionCooldown = Time.time + 0.5f;
             }
 
-            if (Input.GetButtonUp(Interact2Btn))
+            if (Input.GetButtonUp(Interact2Btn) && Time.time > interactionCooldown)
             {
                 //Perform Interact 2 actions for collided object
-                print("Interact 2");
+                //print("Interact 2");
                 col.gameObject.GetComponent<InteractableEntity>().Interact("Interact2", this.gameObject);
+                interactionCooldown = Time.time + 0.5f;
             }
 
-            if (Input.GetButtonUp(TakeGiveBtn))
+            if (Input.GetButtonUp(TakeGiveBtn) && Time.time > interactionCooldown)
             {
                 //Take the object or give currently held object
-                print("Interact Take Give");
+                //print("Interact Take Give");
                 col.gameObject.GetComponent<InteractableEntity>().Interact("TakeGive", this.gameObject);
+                interactionCooldown = Time.time + 0.5f;
             }
         }
     }
