@@ -9,6 +9,7 @@ TagManager:
   - Fire
   - outerPlayer
   - interactable
+  - intimatePartygoer
   layers:
   - Default
   - TransparentFX

@@ -57,14 +57,14 @@ public class GameState : MonoBehaviour {
 
     private void OnTriggerEnter (Collider col) {
         //print("Collided with " + col);
-        if (col.gameObject.tag == "partyGoer" || col.gameObject.tag == "interactable") {
+        if (col.gameObject.tag == "intimatePartygoer" || col.gameObject.tag == "interactable") {
             //Display interaction context menu
         }
     }
 
     private void OnTriggerStay (Collider col) {
         //print("Collided with " + col);
-        if (col.gameObject.tag == "partyGoer" || col.gameObject.tag == "interactable") {
+        if (col.gameObject.tag == "intimatePartygoer" || col.gameObject.tag == "interactable") {
             if (Input.GetButtonUp (Interact1Btn) && Time.time > interactionCooldown) {
                 //Perform Interact 1 actions for collided object
                 //print("Interact 1");
@@ -90,7 +90,7 @@ public class GameState : MonoBehaviour {
     }
 
     private void OnTriggerExit (Collider col) {
-        if (col.gameObject.tag == "partygoer" || col.gameObject.tag == "interactable") {
+        if (col.gameObject.tag == "intimatePartygoer" || col.gameObject.tag == "interactable") {
             //Display interaction context menu
         }
     }
