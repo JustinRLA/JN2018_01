@@ -1,22 +1,58 @@
 fileFormatVersion: 2
-guid: 42b1be32d24f76547a0141fa04684fa8
+guid: 84b37db683389fd43970f8b03e189225
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: BaseCharacter_BaseCharacter
-    100004: BaseCharacter_Face
-    400000: //RootNode
-    400002: BaseCharacter_BaseCharacter
-    400004: BaseCharacter_Face
-    2100000: BaseCharacter_BaseCharacterMat
-    2100002: BaseCharacter_FaceMat
-    2300000: BaseCharacter_BaseCharacter
-    2300002: BaseCharacter_Face
-    3300000: BaseCharacter_BaseCharacter
-    3300002: BaseCharacter_Face
-    4300000: BaseCharacter_BaseCharacter
-    4300002: BaseCharacter_Face
+    100000: Accesoires_Beanie
+    100002: Accesoires_Bun
+    100004: Accesoires_Ecouteurs
+    100006: Accesoires_Ponytail
+    100008: //RootNode
+    100010: Cap_Accesoires
+    100012: Collets_Round
+    100014: Collets_V
+    100016: Polo_Collets
+    400000: Accesoires_Beanie
+    400002: Accesoires_Bun
+    400004: Accesoires_Ecouteurs
+    400006: Accesoires_Ponytail
+    400008: //RootNode
+    400010: Cap_Accesoires
+    400012: Collets_Round
+    400014: Collets_V
+    400016: Polo_Collets
+    2100000: Accesoires_BeanieMat
+    2100002: Accesoires_BunMat
+    2100004: Accesoires_EcouteursMat
+    2100006: Accesoires_PonytailMat
+    2100008: Cap_AccesoiresMat
+    2100010: Collets_RoundMat
+    2100012: Collets_VMat
+    2100014: Polo_ColletsMat
+    2300000: Accesoires_Beanie
+    2300002: Accesoires_Bun
+    2300004: Accesoires_Ecouteurs
+    2300006: Accesoires_Ponytail
+    2300008: Cap_Accesoires
+    2300010: Collets_Round
+    2300012: Collets_V
+    2300014: Polo_Collets
+    3300000: Accesoires_Beanie
+    3300002: Accesoires_Bun
+    3300004: Accesoires_Ecouteurs
+    3300006: Accesoires_Ponytail
+    3300008: Cap_Accesoires
+    3300010: Collets_Round
+    3300012: Collets_V
+    3300014: Polo_Collets
+    4300000: Accesoires_Beanie
+    4300002: Accesoires_Bun
+    4300004: Accesoires_Ecouteurs
+    4300006: Accesoires_Ponytail
+    4300008: Cap_Accesoires
+    4300010: Collets_Round
+    4300012: Collets_V
+    4300014: Polo_Collets
   externalObjects: {}
   materials:
     importMaterials: 1
