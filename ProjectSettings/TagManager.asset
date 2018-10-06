@@ -8,6 +8,7 @@ TagManager:
   - intimatePlayer
   - Fire
   - outerPlayer
+  - interactable
   layers:
   - Default
   - TransparentFX
