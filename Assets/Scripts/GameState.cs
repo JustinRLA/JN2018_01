@@ -38,9 +38,11 @@ public class GameState : MonoBehaviour {
     //The mental health score needed to make balcony accessible
     public int balconyAccessible = 10;
     //The mental health score needed to trigger everyone being mad and making balcony the only remaining option
-    public int goodEndTrigger = 0;
+    public int goodEndTrigger = 11;
     // Animator to monitor result
     public Animator Rig;
+
+    public Balcony balconyScript;
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //OTHER ENTITY VARIABLES
@@ -77,7 +79,7 @@ public class GameState : MonoBehaviour {
         if (mentalHealthScore <= goodEndTrigger) {
             PlayBalconyPrompt ();
         } else if (mentalHealthScore <= balconyAccessible) {
-            //Make balcony available interaction for the player
+            balconyScript.OpenBalcony ();
         }
 
         //Gradual decrease of mental health over time
@@ -118,19 +120,14 @@ public class GameState : MonoBehaviour {
         Rig.SetTrigger ("Success");
     }
 
-    public void UpdateInventory(bool createOrDestroy, GameObject item)
-    {
-        if(createOrDestroy == true)
-        {
-            pickupItem = Instantiate(item, grabbingHand.position, grabbingHand.rotation);
-            pickupItem.transform.SetParent(grabbingHand);
-        }
-        else
-        {
-            Destroy(pickupItem,0.8f);
+    public void UpdateInventory (bool createOrDestroy, GameObject item) {
+        if (createOrDestroy == true) {
+            pickupItem = Instantiate (item, grabbingHand.position, grabbingHand.rotation);
+            pickupItem.transform.SetParent (grabbingHand);
+        } else {
+            Destroy (pickupItem, 0.8f);
         }
     }
-
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //TRIGGERS
@@ -156,7 +153,7 @@ public class GameState : MonoBehaviour {
 
             if (Input.GetButtonUp (Interact1Btn) && !playerOnCooldown) {
                 //Perform Interact 1 actions for collided object
-                print("Interact 1 with " + col.name);
+                print ("Interact 1 with " + col.name);
                 Rig.SetTrigger ("Interact1");
                 StartCoroutine (ActionCooldown ());
                 col.gameObject.GetComponent<InteractableEntity> ().Interact ("Interact1", this.gameObject);
