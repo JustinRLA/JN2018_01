@@ -7,7 +7,7 @@ public class DepressionManager : MonoBehaviour {
 	float anxiety;
 	public GameState manager;
 	GameObject[] lightInScene;
-	GameObject[] FloorCarvers;
+	public GameObject[] FloorCarvers;
 	float[] lightIntensities;
 	int clock = -1;
 	bool CarversUp;
