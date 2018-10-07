@@ -36,9 +36,9 @@ public class GameState : MonoBehaviour {
     //How long in seconds between interactions before anxiety kicks in
     public int idleAnxietyTime = 5;
     //The mental health score needed to make balcony accessible
-    public int balconyAccessible = 10;
+    public float balconyAccessible = 10f;
     //The mental health score needed to trigger everyone being mad and making balcony the only remaining option
-    public int goodEndTrigger = 11;
+    public float goodEndTrigger = 11f;
     // Animator to monitor result
     public Animator Rig;
 
@@ -79,7 +79,10 @@ public class GameState : MonoBehaviour {
         //Trigger Balcony Prompt
         if (mentalHealthScore <= goodEndTrigger) {
             PlayBalconyPrompt ();
-        } else if (mentalHealthScore <= balconyAccessible) {
+        }
+
+        if (mentalHealthScore <= balconyAccessible) {
+            Debug.Log ("Balcony");
             balconyScript.OpenBalcony ();
         }
 
@@ -138,7 +141,7 @@ public class GameState : MonoBehaviour {
         if (col.gameObject.tag == "intimatePartygoer" && col.gameObject.GetComponentInParent<Partygoer> ().anger < 1.0 ||
             col.gameObject.tag == "interactable") {
 
-            //Display interaction context menu
+            col.gameObject.GetComponentInParent<InteractableEntity> ().DisplayOptions (true);
         }
         //Partygoers that start looking at you
         else if (col.gameObject.tag == "partyGoer" && !audience.Contains (col.gameObject)) {
@@ -148,60 +151,56 @@ public class GameState : MonoBehaviour {
     }
 
     private void OnTriggerStay (Collider col) {
-            //print("Collided with " + col);
-            if (col.gameObject.tag == "intimatePartygoer" && col.gameObject.GetComponentInParent<Partygoer>().anger < 1.0 ||
-            col.gameObject.tag == "interactable")
-            {
+        //print("Collided with " + col);
+        if (col.gameObject.tag == "intimatePartygoer" && col.gameObject.GetComponentInParent<Partygoer> ().anger < 1.0 ||
+            col.gameObject.tag == "interactable") {
 
-                if (Input.GetButtonUp(Interact1Btn) && !playerOnCooldown)
-                {
-                    //Perform Interact 1 actions for collided object
-                    //print("Interact 1 with " + col.name);
-                    Rig.SetTrigger("Interact1");
-                    StartCoroutine(ActionCooldown());
-                    col.gameObject.GetComponent<InteractableEntity>().Interact("Interact1", this.gameObject);
-                    //parentShell.LookAt(new Vector3(col.transform.position.x, this.transform.position.y,col.transform.position.z));
+            if (Input.GetButtonUp (Interact1Btn) && !playerOnCooldown) {
+                //Perform Interact 1 actions for collided object
+                //print("Interact 1 with " + col.name);
+                Rig.SetTrigger ("Interact1");
+                StartCoroutine (ActionCooldown ());
+                col.gameObject.GetComponent<InteractableEntity> ().Interact ("Interact1", this.gameObject);
+                //parentShell.LookAt(new Vector3(col.transform.position.x, this.transform.position.y,col.transform.position.z));
 
+            }
+
+            if (Input.GetButtonUp (Interact2Btn) && !playerOnCooldown &&
+                col.gameObject.GetComponent<InteractableEntity> ().hasInteraction2 == true) {
+                //Perform Interact 2 actions for collided object
+                //print("Interact 2");
+                Rig.SetTrigger ("Interact2");
+                col.gameObject.GetComponent<InteractableEntity> ().Interact ("Interact2", this.gameObject);
+                StartCoroutine (ActionCooldown ());
+            }
+
+            if (Input.GetButtonUp (TakeGiveBtn) && !playerOnCooldown) {
+                //Player can pick up the item
+                if (col.gameObject.GetComponent<InteractableEntity> ().canBePickedUp == true && isHoldingItem == false) {
+                    Rig.SetTrigger ("Pickup");
+                    Rig.SetLayerWeight (1, 1f);
+                    //Give player object
+                    print ("player took " + pickupItem);
+                    isHoldingItem = true;
+
+                    //Interaction with object
+                    col.gameObject.GetComponent<InteractableEntity> ().Interact ("Take", this.gameObject);
+                    StartCoroutine (ActionCooldown ());
                 }
 
-                if (Input.GetButtonUp(Interact2Btn) && !playerOnCooldown &&
-                    col.gameObject.GetComponent<InteractableEntity>().hasInteraction2 == true)
-                {
-                    //Perform Interact 2 actions for collided object
-                    //print("Interact 2");
-                    Rig.SetTrigger("Interact2");
-                    col.gameObject.GetComponent<InteractableEntity>().Interact("Interact2", this.gameObject);
-                    StartCoroutine(ActionCooldown());
-                }
+                //Player can give item
+                else if (col.gameObject.GetComponent<InteractableEntity> ().canReceive == true && isHoldingItem == true) {
+                    Rig.SetTrigger ("Drop");
+                    Rig.SetLayerWeight (1, 0f);
+                    //Give player object
+                    print ("player gave " + pickupItem);
+                    isHoldingItem = false;
 
-                if (Input.GetButtonUp(TakeGiveBtn) && !playerOnCooldown)
-                {
-                    //Player can pick up the item
-                    if (col.gameObject.GetComponent<InteractableEntity>().canBePickedUp == true && isHoldingItem == false)
-                    {
-                        Rig.SetTrigger("PickUp");
-                        //Give player object
-                        print("player took " + pickupItem);
-                        isHoldingItem = true;
-
-                        //Interaction with object
-                        col.gameObject.GetComponent<InteractableEntity>().Interact("Take", this.gameObject);
-                        StartCoroutine(ActionCooldown());
-                    }
-
-                    //Player can give item
-                    else if (col.gameObject.GetComponent<InteractableEntity>().canReceive == true && isHoldingItem == true)
-                    {
-                        Rig.SetTrigger("Drop");
-                        //Give player object
-                        print("player gave " + pickupItem);
-                        isHoldingItem = false;
-
-                        col.gameObject.GetComponent<InteractableEntity>().Interact("Give", this.gameObject);
-                        StartCoroutine(ActionCooldown());
-                    }
+                    col.gameObject.GetComponent<InteractableEntity> ().Interact ("Give", this.gameObject);
+                    StartCoroutine (ActionCooldown ());
                 }
             }
+        }
         /*
         else if (col.gameObject.tag == "intimatePartygoer" && col.gameObject.GetComponentInParent<Partygoer>().anger >= 1.0)
         {
@@ -213,7 +212,7 @@ public class GameState : MonoBehaviour {
         if (col.gameObject.tag == "intimatePartygoer" ||
             col.gameObject.tag == "interactable") {
 
-            //Hide interaction context menu
+            col.gameObject.GetComponentInParent<InteractableEntity> ().DisplayOptions (false);
         }
         //Partygoers that stop looking at you
         else if (col.gameObject.tag == "partyGoer" && audience.Contains (col.gameObject)) {

@@ -9,13 +9,13 @@ public class Balcony : MonoBehaviour {
 	public Light balconyLight;
 
 	public void OpenBalcony () {
-		GetComponent<SkinnedMeshRenderer> ().SetBlendShapeWeight (0, Random.Range (0f, 100f));
+		GetComponent<SkinnedMeshRenderer> ().SetBlendShapeWeight (0, 100f);
 		GetComponent<BoxCollider> ().isTrigger = true;
-		balconyLight.intensity = 1f;
+		balconyLight.intensity = 2.75f;
 		canEndGame = true;
 	}
 
-	private void OnTriggerEnter (Collider other) {
+	private void OnTriggerStay (Collider other) {
 		if (other.gameObject.tag == "intimatePlayer" && canEndGame == true) {
 			SceneManager.LoadScene ("BalconyScene", LoadSceneMode.Single);
 		}
