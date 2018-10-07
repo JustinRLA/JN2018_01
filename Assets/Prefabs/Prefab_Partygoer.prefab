@@ -1427,9 +1427,9 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
-  - {fileID: 4922051885990900}
   - {fileID: 4603908575247812}
   - {fileID: 4563177556994728}
+  - {fileID: 4922051885990900}
   m_Father: {fileID: 4186031093371576}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1548,7 +1548,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4439293257041808}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4564939429204398
 Transform:
@@ -1587,7 +1587,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4439293257041808}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4608015306655546
 Transform:
@@ -1913,7 +1913,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4439293257041808}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4929239134666612
 Transform:
@@ -2438,14 +2438,14 @@ MonoBehaviour:
   - {fileID: 1299193868032550}
   - {fileID: 1767833567432626}
   - {fileID: 1955345509789508}
-  - {fileID: 1571145874701828}
-  - {fileID: 1187655569992470}
   collars:
   - {fileID: 1031017735555668}
   - {fileID: 1187383371133884}
+  - {fileID: 1245257165177024}
   topTex:
   - {fileID: 2800000, guid: 2d36779e12400b0409066f1518d19ed7, type: 3}
   - {fileID: 2800000, guid: 871c31f03d6261b41806a64fcc0fd5ba, type: 3}
+  - {fileID: 2800000, guid: 00329dd472e3e394fbe7c3af5aaba794, type: 3}
   midTex:
   - {fileID: 2800000, guid: 9b565df577d3acc4a9b54586ae1e9011, type: 3}
   - {fileID: 2800000, guid: 0a0dd9c2eb1da4f40b0269366d933242, type: 3}

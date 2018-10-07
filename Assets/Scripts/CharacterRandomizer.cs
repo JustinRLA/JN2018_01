@@ -50,11 +50,13 @@ public class CharacterRandomizer : MonoBehaviour {
 
 		Material hostAccessory = hats[hatDice].GetComponent<SkinnedMeshRenderer> ().material;
 
-		if (hatDice == 0 || hatDice == 1) {
-			hostAccessory.SetColor ("_Color", colorDice); // Hair Material
-		} else {
-			hostAccessory.SetColor ("_Color", colorDice);
-		}
+		hostAccessory.SetColor ("_Color", colorDice); // Hair Material
+		
+		//if (hatDice == 0 || hatDice == 1) {
+		//	hostAccessory.SetColor ("_Color", colorDice); // Hair Material
+		//} else {
+		//	hostAccessory.SetColor ("_Color", colorDice);
+		//}
 
 		hats[hatDice].GetComponent<SkinnedMeshRenderer> ().material = hostAccessory;
 		collars[topDice].GetComponent<SkinnedMeshRenderer> ().material = hostAccessory;
