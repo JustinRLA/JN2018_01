@@ -45,6 +45,7 @@ public class DepressionManager : MonoBehaviour {
 			foreach (GameObject carver in FloorCarvers) {
 				carver.SetActive (true);
 			}
+			CarversUp = true;
 		}
 
 	}

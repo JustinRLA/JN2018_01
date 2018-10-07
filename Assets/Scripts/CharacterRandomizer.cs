@@ -4,62 +4,58 @@ using UnityEngine;
 
 public class CharacterRandomizer : MonoBehaviour {
 
-	public bool isPlayer;
 	public GameObject[] hats;
 	public GameObject[] collars;
-	public SkinnedMeshRenderer BodyMaterials;
 
+	public Texture[] topTex;
+	public Texture[] midTex;
+	public Texture[] lowTex;
+
+	public Color[] outfitColors;
+	public Color[] skinColors;
 	public Color[] accessoryColors;
 
-	public bool enableDeletion = true;
+	public SkinnedMeshRenderer BodyMaterials;
 
 	void Start () {
 
-		if (!isPlayer) {
-			int aDice = Random.Range (0, hats.Length + 1);
-			int bDice = Random.Range (0, collars.Length + 1);
+		Material[] dummyMaterials = BodyMaterials.materials;
 
-			if (aDice < hats.Length) {
+		int hatDice = Random.Range (0, hats.Length);
+		int topDice = Random.Range (0, topTex.Length);
+		int midDice = Random.Range (0, midTex.Length);
+		int bottomDice = Random.Range (0, lowTex.Length);
 
-				hats[aDice].GetComponent<SkinnedMeshRenderer> ().material.SetColor ("_Color", accessoryColors[Random.Range (0, accessoryColors.Length)]);
+		Color colorDice = outfitColors[Random.Range (0, outfitColors.Length)];
+		Color selectedBottomColors = outfitColors[Random.Range (0, outfitColors.Length)];
+		Color selectedTopColors = outfitColors[Random.Range (0, outfitColors.Length)];
+		Color selectedSkinColors = outfitColors[Random.Range (0, outfitColors.Length)];
 
-				for (int i = 0; i < hats.Length; i++) {
-					if (i != aDice) {
-						if (enableDeletion) {
-							hats[i].SetActive (false);
-						}
+		dummyMaterials[0].mainTexture = topTex[topDice];
+		dummyMaterials[1].mainTexture = midTex[midDice];
+		dummyMaterials[2].mainTexture = lowTex[bottomDice];
 
-					}
+		dummyMaterials[0].SetColor ("_Color", colorDice);
+		dummyMaterials[1].SetColor ("_Color", colorDice);
+		dummyMaterials[2].SetColor ("_Color", colorDice);
+		/* 
+				for (int i = 0; i < dummyMaterials.Length; i++) {
+					dummyMaterials[i].SetColor ("_Color", colorDice);
 				}
-			} else {
-				for (int i = 0; i < hats.Length; i++) {
-					if (enableDeletion) {
-						hats[i].SetActive (false);
-					}
+		*/
+		//	BodyMaterials.materials = dummyMaterials;
 
-				}
-			}
-			if (bDice < collars.Length) {
+		hats[hatDice].SetActive (true);
 
-				//	collars[bDice].GetComponent<SkinnedMeshRenderer> ().material.SetColor ("_Color", accessoryColors[Random.Range (0, accessoryColors.Length)]);
+		Material hostAccessory = hats[hatDice].GetComponent<SkinnedMeshRenderer> ().material;
 
-				for (int i = 0; i < collars.Length; i++) {
-					if (i != aDice) {
-						if (enableDeletion) {
-							collars[i].SetActive (false);
-						}
-
-					}
-				}
-			} else {
-				for (int i = 0; i < collars.Length; i++) {
-					if (enableDeletion) {
-						collars[i].SetActive (false);
-					}
-
-				}
-			}
+		if (hatDice == 0 || hatDice == 1) {
+			hostAccessory.SetColor ("_Color", colorDice); // Hair Material
+		} else {
+			hostAccessory.SetColor ("_Color", colorDice);
 		}
+
+		hats[hatDice].GetComponent<SkinnedMeshRenderer> ().material = hostAccessory;
 
 	}
 }

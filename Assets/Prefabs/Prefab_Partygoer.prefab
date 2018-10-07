@@ -56,7 +56,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1048703791446672
 GameObject:
   m_ObjectHideFlags: 1
@@ -253,7 +253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1187655569992470
 GameObject:
   m_ObjectHideFlags: 1
@@ -269,7 +269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1190718477048176
 GameObject:
   m_ObjectHideFlags: 1
@@ -378,7 +378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1253613904835596
 GameObject:
   m_ObjectHideFlags: 1
@@ -454,7 +454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1333370567931142
 GameObject:
   m_ObjectHideFlags: 1
@@ -685,7 +685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1587683448691856
 GameObject:
   m_ObjectHideFlags: 1
@@ -1000,7 +1000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1958069787730552
 GameObject:
   m_ObjectHideFlags: 1
@@ -1010,7 +1010,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4138886552009642}
   - component: {fileID: 137579327961667820}
-  - component: {fileID: 114713361132755104}
   m_Layer: 0
   m_Name: BaseCharacter 1
   m_TagString: Untagged
@@ -1501,7 +1500,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1798156031846214}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.9914449, z: -0, w: -0.13052608}
   m_LocalPosition: {x: 4.5893373, y: -7.511312e-17, z: 3.3827941}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1511,7 +1510,7 @@ Transform:
   - {fileID: 4249000903180638}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 194.99998, z: 0}
 --- !u!4 &4541333237816176
 Transform:
   m_ObjectHideFlags: 1
@@ -2435,22 +2434,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a964010f8f13094f98a1e4ca3fce1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 0
   hats:
+  - {fileID: 1299193868032550}
+  - {fileID: 1767833567432626}
   - {fileID: 1955345509789508}
   - {fileID: 1571145874701828}
   - {fileID: 1187655569992470}
-  - {fileID: 1299193868032550}
   collars:
-  - {fileID: 1245257165177024}
+  - {fileID: 0}
+  - {fileID: 0}
+  topTex:
+  - {fileID: 2800000, guid: 2d36779e12400b0409066f1518d19ed7, type: 3}
+  - {fileID: 2800000, guid: 871c31f03d6261b41806a64fcc0fd5ba, type: 3}
+  midTex:
+  - {fileID: 2800000, guid: 07d247ae91a3ef94f9a0bf0457301b09, type: 3}
+  - {fileID: 2800000, guid: 0a0dd9c2eb1da4f40b0269366d933242, type: 3}
+  lowTex:
+  - {fileID: 2800000, guid: 0a0dd9c2eb1da4f40b0269366d933242, type: 3}
+  - {fileID: 2800000, guid: 9b565df577d3acc4a9b54586ae1e9011, type: 3}
+  outfitColors:
+  - {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 0}
+  - {r: 0.754717, g: 0.6372375, b: 0.6372375, a: 1}
+  - {r: 0.6003026, g: 0.56554824, b: 0.6698113, a: 1}
+  - {r: 0.660528, g: 0.6121396, b: 0.7169812, a: 1}
+  - {r: 0.63630295, g: 0.65726066, b: 0.745283, a: 1}
+  - {r: 0.6886792, g: 0.5879761, b: 0.62034494, a: 1}
+  - {r: 0.6213065, g: 0.711986, b: 0.735849, a: 1}
+  - {r: 0.55291027, g: 0.6698113, b: 0.6698113, a: 1}
+  skinColors:
+  - {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 0}
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 0}
+  accessoryColors: []
   BodyMaterials: {fileID: 137579327961667820}
-  accessoryColors:
-  - {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
-  - {r: 0.5, g: 0.3514151, b: 0.3514151, a: 1}
-  - {r: 0.3584906, g: 0.3391864, b: 0.28915986, a: 1}
-  - {r: 0.3060698, g: 0.3197733, b: 0.3584906, a: 1}
-  - {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
-  enableDeletion: 1
 --- !u!114 &114318373851995322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2479,39 +2495,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 95263767207197496}
---- !u!114 &114713361132755104
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1958069787730552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b3ecf0d0c5dc7b44857cbb242fc917f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outfitColors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
-  - {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
-  - {r: 0.26477394, g: 0.3157968, b: 0.4716981, a: 1}
-  - {r: 0.3962264, g: 0.36015597, b: 0.30838376, a: 1}
-  - {r: 0.6226415, g: 0.12041651, b: 0.12041651, a: 1}
-  - {r: 0.2622244, g: 0.24385902, b: 0.3773585, a: 1}
-  - {r: 0.38225675, g: 0.46226418, b: 0.29000536, a: 1}
-  skinColors:
-  - {r: 0.8962264, g: 0.79151314, b: 0.75671947, a: 1}
-  - {r: 1, g: 0.8039216, b: 0.5803922, a: 1}
-  - {r: 0.91764706, g: 0.7529412, b: 0.5254902, a: 1}
-  - {r: 1, g: 0.6784314, b: 0.3764706, a: 1}
-  - {r: 1, g: 0.8901961, b: 0.62352943, a: 1}
-  - {r: 0.3254902, g: 0.21568628, b: 0.08235294, a: 1}
-  - {r: 0.70980394, g: 0.47058824, b: 0.32156864, a: 1}
-  - {r: 0.8, g: 0.64705884, b: 0.5176471, a: 1}
-  recolouredCollars:
-  - {fileID: 1245257165177024}
-  - {fileID: 1031017735555668}
-  - {fileID: 1187383371133884}
 --- !u!136 &136225881172344742
 CapsuleCollider:
   m_ObjectHideFlags: 1
