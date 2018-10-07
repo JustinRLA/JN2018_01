@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33027904443193272}
   - component: {fileID: 23545653211632414}
   m_Layer: 0
-  m_Name: PF_Tv
+  m_Name: Mesh_TV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

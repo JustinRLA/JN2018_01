@@ -13,6 +13,7 @@ public class DepressionManager : MonoBehaviour {
 	bool CarversUp;
 
 	public AudioSource[] sounds;
+	public AudioSource heartbeat;
 
 	void Start () {
 		lightInScene = GameObject.FindGameObjectsWithTag ("Light");
@@ -30,20 +31,33 @@ public class DepressionManager : MonoBehaviour {
 	}
 
 	void Update () {
+
 		anxiety = (manager.mentalHealthScore / 100f);
-		foreach (GameObject lit in lightInScene) {
-			clock++;
-			lit.GetComponent<Light> ().intensity = anxiety * lightIntensities[clock];
-		}
+		heartbeat.volume = 1f - anxiety;
+
 		clock = -1;
+		if (!CarversUp) {
+			foreach (GameObject lit in lightInScene) {
+				clock++;
+				lit.GetComponent<Light> ().intensity = anxiety * lightIntensities[clock];
+			}
+
+		}
 
 		foreach (AudioSource audio in sounds) {
 			audio.volume = anxiety;
 		}
 
 		if (!CarversUp && anxiety < 0.25f) {
+
 			foreach (GameObject carver in FloorCarvers) {
 				carver.SetActive (true);
+
+				foreach (GameObject lit in lightInScene) {
+					clock++;
+					lit.GetComponent<Light> ().intensity = 2f;
+				}
+
 			}
 			CarversUp = true;
 		}

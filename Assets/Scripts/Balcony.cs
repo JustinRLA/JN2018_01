@@ -11,7 +11,7 @@ public class Balcony : MonoBehaviour {
 	public void OpenBalcony () {
 		GetComponent<SkinnedMeshRenderer> ().SetBlendShapeWeight (0, 100f);
 		GetComponent<BoxCollider> ().isTrigger = true;
-		balconyLight.intensity = 2.75f;
+		balconyLight.intensity = 3.28f;
 		canEndGame = true;
 	}
 

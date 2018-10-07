@@ -30,15 +30,15 @@ public class GameState : MonoBehaviour {
     //Is the player doing an action (use to prevent triggers while performing action)
     public bool isActing = false;
     //Rate at which player's mental health deteriorates
-    public float healthDecay = 0.01f;
+    public float healthDecay = 0.7f;
     //Is the player's anxiety decrease on cooldown
     public bool isNotGettingAnxious = false;
     //How long in seconds between interactions before anxiety kicks in
     public int idleAnxietyTime = 5;
     //The mental health score needed to make balcony accessible
-    public float balconyAccessible = 10f;
+    public float balconyAccessible = 25f;
     //The mental health score needed to trigger everyone being mad and making balcony the only remaining option
-    public float goodEndTrigger = 11f;
+    public float goodEndTrigger = 25f;
     // Animator to monitor result
     public Animator Rig;
 
