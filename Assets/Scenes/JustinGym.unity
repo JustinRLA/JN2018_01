@@ -930,7 +930,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 11761190804a3a14a8a8207c86ad2a00, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1401,16 +1401,6 @@ Prefab:
     - target: {fileID: 4655984307533582, guid: 7dab7108a1afeeb4faa5148dca8fb3bb, type: 2}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 54388426220668868, guid: 7dab7108a1afeeb4faa5148dca8fb3bb,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 136654033855286384, guid: 7dab7108a1afeeb4faa5148dca8fb3bb,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dab7108a1afeeb4faa5148dca8fb3bb, type: 2}
