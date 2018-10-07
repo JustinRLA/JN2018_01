@@ -2441,13 +2441,13 @@ MonoBehaviour:
   - {fileID: 1571145874701828}
   - {fileID: 1187655569992470}
   collars:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1031017735555668}
+  - {fileID: 1187383371133884}
   topTex:
   - {fileID: 2800000, guid: 2d36779e12400b0409066f1518d19ed7, type: 3}
   - {fileID: 2800000, guid: 871c31f03d6261b41806a64fcc0fd5ba, type: 3}
   midTex:
-  - {fileID: 2800000, guid: 07d247ae91a3ef94f9a0bf0457301b09, type: 3}
+  - {fileID: 2800000, guid: 9b565df577d3acc4a9b54586ae1e9011, type: 3}
   - {fileID: 2800000, guid: 0a0dd9c2eb1da4f40b0269366d933242, type: 3}
   lowTex:
   - {fileID: 2800000, guid: 0a0dd9c2eb1da4f40b0269366d933242, type: 3}

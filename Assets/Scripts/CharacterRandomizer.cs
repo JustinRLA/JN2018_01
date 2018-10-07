@@ -46,6 +46,7 @@ public class CharacterRandomizer : MonoBehaviour {
 		//	BodyMaterials.materials = dummyMaterials;
 
 		hats[hatDice].SetActive (true);
+		collars[topDice].SetActive (true);
 
 		Material hostAccessory = hats[hatDice].GetComponent<SkinnedMeshRenderer> ().material;
 
@@ -56,6 +57,6 @@ public class CharacterRandomizer : MonoBehaviour {
 		}
 
 		hats[hatDice].GetComponent<SkinnedMeshRenderer> ().material = hostAccessory;
-
+		collars[topDice].GetComponent<SkinnedMeshRenderer> ().material = hostAccessory;
 	}
 }
