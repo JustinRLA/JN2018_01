@@ -1,21 +1,15 @@
 fileFormatVersion: 2
-guid: 6d2d5d3d9a2874b4fb5aa4126eec18c7
+guid: bc611f050b41d784a85b2a42512aefd2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
     2100000: No Name
-    2100002: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Mesh_Cup
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 42b1be32d24f76547a0141fa04684fa8, type: 3}
+    4300000: Mesh_Frigo
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
