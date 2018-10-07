@@ -27,6 +27,8 @@ public class InteractableEntity : MonoBehaviour {
     //How much mental health is gained/lost when player interacts with entity
     public int healthImpact = 5;
 
+    public GameObject pickupPrefab;
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //STANDARD FUNCTIONS
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -94,10 +96,12 @@ public class InteractableEntity : MonoBehaviour {
         }
         else if (input == "Take")
         {
-
+            print(this.gameObject.name + " gives you a " + pickupPrefab);
+            player.GetComponent<GameState>().UpdateInventory(true, pickupPrefab);
         }
         else if (input == "Give")
         {
+            player.GetComponent<GameState>().UpdateInventory(false, pickupPrefab);
             if (interactableType == InteractableType.partygoer)
             {
                 Result(player);

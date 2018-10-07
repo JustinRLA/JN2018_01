@@ -137,6 +137,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1136758461054850
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4225555788840962}
+  m_Layer: 0
+  m_Name: HandAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1141814876528452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,6 +1280,19 @@ Transform:
   m_Father: {fileID: 4930173436075068}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4225555788840962
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1136758461054850}
+  m_LocalRotation: {x: -0.48296294, y: 0.22414392, z: 0.12940955, w: 0.8365163}
+  m_LocalPosition: {x: -3, y: -5, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4440150092317856}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -60, y: 30, z: 0}
 --- !u!4 &4232728996493266
 Transform:
   m_ObjectHideFlags: 1
@@ -1443,7 +1471,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0.00000085883806, w: 1}
   m_LocalPosition: {x: -9.884668, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4225555788840962}
   m_Father: {fileID: 4202253913711256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1644,7 +1673,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141814876528452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.014863403, y: 0.000000059604645, z: 0.40946347}
+  m_LocalPosition: {x: 11.34, y: 5.0348826e-17, z: 10.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4387734003849782}
@@ -2482,6 +2511,8 @@ MonoBehaviour:
   goodEndTrigger: 0
   Rig: {fileID: 95501127791887428}
   audience: []
+  grabbingHand: {fileID: 4225555788840962}
+  pickupItem: {fileID: 0}
 --- !u!114 &114875823742449738
 MonoBehaviour:
   m_ObjectHideFlags: 1

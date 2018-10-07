@@ -587,6 +587,8 @@ MonoBehaviour:
   neutralRatio: 30
   failRatio: 100
   healthImpact: 5
+  pickupPrefab: {fileID: 1249152497055634, guid: 6c1fb41d0401b004b80b6f9cfeb1b9e1,
+    type: 2}
 --- !u!136 &136649895522104050
 CapsuleCollider:
   m_ObjectHideFlags: 1

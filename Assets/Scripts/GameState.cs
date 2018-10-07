@@ -48,6 +48,9 @@ public class GameState : MonoBehaviour {
     //For partygoers that are witnessing your actions
     public List<GameObject> audience = new List<GameObject> ();
 
+    public Transform grabbingHand;
+    public GameObject pickupItem;
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //STANDARD FUNCTIONS
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -112,6 +115,20 @@ public class GameState : MonoBehaviour {
     public void PlayPositiveAnimation () {
         Rig.SetTrigger ("Success");
     }
+
+    public void UpdateInventory(bool createOrDestroy, GameObject item)
+    {
+        if(createOrDestroy == true)
+        {
+            pickupItem = Instantiate(item, grabbingHand.position, grabbingHand.rotation);
+            pickupItem.transform.SetParent(grabbingHand);
+        }
+        else
+        {
+            Destroy(pickupItem,0.8f);
+        }
+    }
+
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //TRIGGERS
@@ -178,6 +195,11 @@ public class GameState : MonoBehaviour {
                 }
             }
         }
+        /*
+        else if (col.gameObject.tag == "intimatePartygoer" && col.gameObject.GetComponentInParent<Partygoer>().anger >= 0.8)
+        {
+            print(col.gameObject.name + "already hates you");
+        }*/
     }
 
     private void OnTriggerExit (Collider col) {
