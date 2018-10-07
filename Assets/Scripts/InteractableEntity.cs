@@ -124,7 +124,7 @@ public class InteractableEntity : MonoBehaviour {
             //Make partygoer less mad
             if (interactableType == InteractableType.partygoer)
             {
-                GetComponent<Partygoer>().SetMood(-healthImpact);
+                GetComponent<Partygoer>().SetMood(-healthImpact, player);
             }
         }
         else if (resultScore <= neutralRatio)
@@ -137,7 +137,7 @@ public class InteractableEntity : MonoBehaviour {
             //Make partygoer less mad
             if (interactableType == InteractableType.partygoer)
             {
-                GetComponent<Partygoer>().SetMood(-healthImpact);
+                GetComponent<Partygoer>().SetMood(-healthImpact, player);
             }
         }
         else
@@ -149,7 +149,7 @@ public class InteractableEntity : MonoBehaviour {
             //Make partygoer mad
             if(interactableType == InteractableType.partygoer)
             {
-                GetComponent<Partygoer>().SetMood(1.0f);
+                GetComponent<Partygoer>().SetMood(1.0f, player);
             }
         }
     }
