@@ -7,8 +7,10 @@ public class DepressionManager : MonoBehaviour {
 	float anxiety;
 	public GameState manager;
 	GameObject[] lightInScene;
+	GameObject[] FloorCarvers;
 	float[] lightIntensities;
 	int clock = -1;
+	bool CarversUp;
 
 	public AudioSource[] sounds;
 
@@ -18,6 +20,11 @@ public class DepressionManager : MonoBehaviour {
 
 		for (int i = 0; i < lightInScene.Length; i++) {
 			lightIntensities[i] = lightInScene[i].GetComponent<Light> ().intensity;
+		}
+
+		foreach (GameObject carver in FloorCarvers) {
+			Destroy (carver.GetComponent<MeshRenderer> ());
+			carver.SetActive (false);
 		}
 
 	}
@@ -32,6 +39,12 @@ public class DepressionManager : MonoBehaviour {
 
 		foreach (AudioSource audio in sounds) {
 			audio.volume = anxiety;
+		}
+
+		if (!CarversUp && anxiety < 0.25f) {
+			foreach (GameObject carver in FloorCarvers) {
+				carver.SetActive (true);
+			}
 		}
 
 	}

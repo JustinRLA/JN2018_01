@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4033060010003850}
   - component: {fileID: 137378939719607960}
-  - component: {fileID: 114684429584950266}
   - component: {fileID: 114543919878918124}
   - component: {fileID: 65845589609961744}
   - component: {fileID: 114987575894120452}
@@ -137,18 +136,6 @@ MonoBehaviour:
   colorNameInShader: _Color
   useRandomColor: 1
   isSkinnedMesh: 1
---- !u!114 &114684429584950266
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1290376603451878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6056e78ebc90204ea7b1a8215e3bda2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Randomize: 1
 --- !u!114 &114987575894120452
 MonoBehaviour:
   m_ObjectHideFlags: 1
