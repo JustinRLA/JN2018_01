@@ -1,21 +1,47 @@
 fileFormatVersion: 2
-guid: 6d2d5d3d9a2874b4fb5aa4126eec18c7
+guid: 6737b57388f014c4b9e2a76168686905
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Pizza1
+    100004: Pizza2
+    100006: Pizza3
+    100008: Pizza4
+    100010: Pizza5
+    100012: Pizza6
+    100014: PizzaBox
     400000: //RootNode
+    400002: Pizza1
+    400004: Pizza2
+    400006: Pizza3
+    400008: Pizza4
+    400010: Pizza5
+    400012: Pizza6
+    400014: PizzaBox
     2100000: No Name
-    2100002: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Mesh_Cup
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 42b1be32d24f76547a0141fa04684fa8, type: 3}
+    2300000: Pizza1
+    2300002: Pizza2
+    2300004: Pizza3
+    2300006: Pizza4
+    2300008: Pizza5
+    2300010: Pizza6
+    2300012: PizzaBox
+    3300000: Pizza1
+    3300002: Pizza2
+    3300004: Pizza3
+    3300006: Pizza4
+    3300008: Pizza5
+    3300010: Pizza6
+    3300012: PizzaBox
+    4300000: PizzaBox
+    4300002: Pizza6
+    4300004: Pizza5
+    4300006: Pizza4
+    4300008: Pizza3
+    4300010: Pizza2
+    4300012: Pizza1
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

@@ -48,12 +48,17 @@ public class GameState : MonoBehaviour {
     //For partygoers that are witnessing your actions
     public List<GameObject> audience = new List<GameObject> ();
 
+    public Transform grabbingHand;
+    public GameObject pickupItem;
+    public Transform parentShell;
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //STANDARD FUNCTIONS
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Use this for initialization
     void Start () {
         //Set starting status variables
+        parentShell = transform.parent;
     }
 
     // Update is called once per frame
@@ -96,7 +101,7 @@ public class GameState : MonoBehaviour {
 
             foreach (GameObject i in audience) {
                 print (i.name + "saw that");
-                i.GetComponentInParent<Partygoer> ().SetMood (1.0f);
+                i.GetComponentInParent<Partygoer> ().SetMood (1.0f, this.gameObject);
                 //Extra damage from each partygoer that witnessed
                 mentalHealthScore = mentalHealthScore - i.GetComponentInParent<InteractableEntity> ().healthImpact;
             }
@@ -112,6 +117,20 @@ public class GameState : MonoBehaviour {
     public void PlayPositiveAnimation () {
         Rig.SetTrigger ("Success");
     }
+
+    public void UpdateInventory(bool createOrDestroy, GameObject item)
+    {
+        if(createOrDestroy == true)
+        {
+            pickupItem = Instantiate(item, grabbingHand.position, grabbingHand.rotation);
+            pickupItem.transform.SetParent(grabbingHand);
+        }
+        else
+        {
+            Destroy(pickupItem,0.8f);
+        }
+    }
+
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //TRIGGERS
@@ -137,10 +156,11 @@ public class GameState : MonoBehaviour {
 
             if (Input.GetButtonUp (Interact1Btn) && !playerOnCooldown) {
                 //Perform Interact 1 actions for collided object
-                //print("Interact 1");
+                print("Interact 1 with " + col.name);
                 Rig.SetTrigger ("Interact1");
                 StartCoroutine (ActionCooldown ());
                 col.gameObject.GetComponent<InteractableEntity> ().Interact ("Interact1", this.gameObject);
+                //parentShell.LookAt(new Vector3(col.transform.position.x, this.transform.position.y,col.transform.position.z));
 
             }
 
@@ -178,6 +198,11 @@ public class GameState : MonoBehaviour {
                 }
             }
         }
+        /*
+        else if (col.gameObject.tag == "intimatePartygoer" && col.gameObject.GetComponentInParent<Partygoer>().anger >= 0.8)
+        {
+            print(col.gameObject.name + "already hates you");
+        }*/
     }
 
     private void OnTriggerExit (Collider col) {

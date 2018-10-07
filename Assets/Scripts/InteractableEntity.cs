@@ -27,6 +27,8 @@ public class InteractableEntity : MonoBehaviour {
     //How much mental health is gained/lost when player interacts with entity
     public int healthImpact = 5;
 
+    public GameObject pickupPrefab;
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //STANDARD FUNCTIONS
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -94,10 +96,12 @@ public class InteractableEntity : MonoBehaviour {
         }
         else if (input == "Take")
         {
-
+            print(this.gameObject.name + " gives you a " + pickupPrefab);
+            player.GetComponent<GameState>().UpdateInventory(true, pickupPrefab);
         }
         else if (input == "Give")
         {
+            player.GetComponent<GameState>().UpdateInventory(false, pickupPrefab);
             if (interactableType == InteractableType.partygoer)
             {
                 Result(player);
@@ -120,7 +124,7 @@ public class InteractableEntity : MonoBehaviour {
             //Make partygoer less mad
             if (interactableType == InteractableType.partygoer)
             {
-                GetComponent<Partygoer>().SetMood(-healthImpact);
+                GetComponent<Partygoer>().SetMood(-healthImpact, player);
             }
         }
         else if (resultScore <= neutralRatio)
@@ -133,7 +137,7 @@ public class InteractableEntity : MonoBehaviour {
             //Make partygoer less mad
             if (interactableType == InteractableType.partygoer)
             {
-                GetComponent<Partygoer>().SetMood(-healthImpact);
+                GetComponent<Partygoer>().SetMood(-healthImpact, player);
             }
         }
         else
@@ -145,7 +149,7 @@ public class InteractableEntity : MonoBehaviour {
             //Make partygoer mad
             if(interactableType == InteractableType.partygoer)
             {
-                GetComponent<Partygoer>().SetMood(1.0f);
+                GetComponent<Partygoer>().SetMood(1.0f, player);
             }
         }
     }
