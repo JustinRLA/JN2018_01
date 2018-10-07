@@ -11,6 +11,8 @@ public class CharacterRandomizer : MonoBehaviour {
 
 	public Color[] accessoryColors;
 
+	public bool enableDeletion = true;
+
 	void Start () {
 
 		if (!isPlayer) {
@@ -23,12 +25,18 @@ public class CharacterRandomizer : MonoBehaviour {
 
 				for (int i = 0; i < hats.Length; i++) {
 					if (i != aDice) {
-						hats[i].SetActive (false);
+						if (enableDeletion) {
+							hats[i].SetActive (false);
+						}
+
 					}
 				}
 			} else {
 				for (int i = 0; i < hats.Length; i++) {
-					hats[i].SetActive (false);
+					if (enableDeletion) {
+						hats[i].SetActive (false);
+					}
+
 				}
 			}
 			if (bDice < collars.Length) {
@@ -37,12 +45,18 @@ public class CharacterRandomizer : MonoBehaviour {
 
 				for (int i = 0; i < collars.Length; i++) {
 					if (i != aDice) {
-						collars[i].SetActive (false);
+						if (enableDeletion) {
+							collars[i].SetActive (false);
+						}
+
 					}
 				}
 			} else {
 				for (int i = 0; i < collars.Length; i++) {
-					collars[i].SetActive (false);
+					if (enableDeletion) {
+						collars[i].SetActive (false);
+					}
+
 				}
 			}
 		}
