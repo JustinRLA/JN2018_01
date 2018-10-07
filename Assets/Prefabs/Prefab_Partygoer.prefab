@@ -102,6 +102,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1061939622713740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4249000903180638}
+  - component: {fileID: 82870145775429078}
+  m_Layer: 0
+  m_Name: Larynx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1073234124703902
 GameObject:
   m_ObjectHideFlags: 1
@@ -1324,6 +1340,19 @@ Transform:
   m_Father: {fileID: 4112093317979614}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4249000903180638
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1061939622713740}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.921, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4538241264563266}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4306975761901926
 Transform:
   m_ObjectHideFlags: 1
@@ -1479,6 +1508,7 @@ Transform:
   - {fileID: 4359995200867940}
   - {fileID: 4838181851820310}
   - {fileID: 4186031093371576}
+  - {fileID: 4249000903180638}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2176,6 +2206,101 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &82870145775429078
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1061939622713740}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 12.1
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95263767207197496
 Animator:
   serializedVersion: 3
@@ -2211,6 +2336,26 @@ MonoBehaviour:
   randomMood: 1
   anger: 0
   emotion: {fileID: 114133461800569096}
+  Larynx: {fileID: 82870145775429078}
+  happySounds:
+  - {fileID: 8300000, guid: 6c6841e200d6e134f9f2722850e8e254, type: 3}
+  - {fileID: 8300000, guid: 42b3397850cfc864e97104cd5a3bd61a, type: 3}
+  - {fileID: 8300000, guid: a74eb55861c52c9429b2d275d9e6174f, type: 3}
+  - {fileID: 8300000, guid: 88cf0e26ec8c9304285853b1f7b694f2, type: 3}
+  - {fileID: 8300000, guid: a8b55d977dd60a74bbcc43e2dae4e49f, type: 3}
+  - {fileID: 8300000, guid: 27a3b1fb3ab3beb4985958d49929d7a2, type: 3}
+  - {fileID: 8300000, guid: 3061cd003afdd524da683a60b9fa423a, type: 3}
+  - {fileID: 8300000, guid: 844d8be53dff5f749a3815595cc77ccf, type: 3}
+  - {fileID: 8300000, guid: 6ae45e0f37f9c8b47ae1494f0c6285ab, type: 3}
+  unhappySounds:
+  - {fileID: 8300000, guid: f5b97272ccc47ad499d6a05156e99908, type: 3}
+  - {fileID: 8300000, guid: 34d51601776abb44fb2b99fbe7df04a3, type: 3}
+  - {fileID: 8300000, guid: 787f35fd2cd10be4c8392c7173be7b3a, type: 3}
+  - {fileID: 8300000, guid: d76647aeb4cf3144fa81bfef432693b6, type: 3}
+  - {fileID: 8300000, guid: 06a29db656106314ca496df3ef9fbe90, type: 3}
+  - {fileID: 8300000, guid: b7d6d45b8b228214da92ca57921d3d6d, type: 3}
+  - {fileID: 8300000, guid: 3584f2e589f07a84dbaa540df3a6c5e8, type: 3}
+  - {fileID: 8300000, guid: 98d2dda54f746e14ea2078fd3cf04a8c, type: 3}
 --- !u!114 &114011148512622246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2259,11 +2404,23 @@ MonoBehaviour:
   - Yes
   - No
   - Maybe
+  - Irate
+  - Happy
   EmotionsIcons:
   - {fileID: 2100000, guid: ac5cbd1bedd5e95488505e02929c0ceb, type: 2}
   - {fileID: 2100000, guid: 68f7e2fcb133fa54aba8a7e37ba7f266, type: 2}
   - {fileID: 2100000, guid: c79e0939aef79ec4eacbaf47493f7626, type: 2}
   - {fileID: 2100000, guid: 353378a7e178c7b4f9256bd1b171a279, type: 2}
+  - {fileID: 2100000, guid: 353378a7e178c7b4f9256bd1b171a279, type: 2}
+  - {fileID: 2100000, guid: 353378a7e178c7b4f9256bd1b171a279, type: 2}
+  EmotionFaces:
+  - {fileID: 2100000, guid: 07230d424bb9cd44ba9a1284201136b1, type: 2}
+  - {fileID: 2100000, guid: 6cf10ce533de1344298c8ea185831f97, type: 2}
+  - {fileID: 2100000, guid: be9b6f85db8389b48bcda50172d23f99, type: 2}
+  - {fileID: 2100000, guid: 07230d424bb9cd44ba9a1284201136b1, type: 2}
+  - {fileID: 2100000, guid: 4962ce274f34198419ece51feae125d3, type: 2}
+  - {fileID: 2100000, guid: 6cf10ce533de1344298c8ea185831f97, type: 2}
+  faceMaterial: {fileID: 137109696783970686}
 --- !u!114 &114134116272877614
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -14,6 +14,18 @@ public class Partygoer : MonoBehaviour {
 	float maxSpeed;
 	GameObject player;
 	public EmoteBubble emotion;
+	public AudioSource Larynx;
+	public AudioClip[] happySounds;
+	public AudioClip[] unhappySounds;
+
+	public void Speak (bool happy) {
+		Larynx.pitch = Random.Range (0.8f, 1.2f);
+		if (happy == true) {
+			Larynx.PlayOneShot (happySounds[Random.Range (0, happySounds.Length)], Random.Range (0.8f, 1f));
+		} else {
+			Larynx.PlayOneShot (unhappySounds[Random.Range (0, unhappySounds.Length)], Random.Range (0.8f, 1f));
+		}
+	}
 
 	void Awake () {
 		triggerMesh.enabled = false;
@@ -63,11 +75,13 @@ public class Partygoer : MonoBehaviour {
 	private void OnTriggerEnter (Collider other) {
 
 		if (other.gameObject.tag == "partyGoer") { // if the partygoer runs into another partygoer
+
+			Speak (true);
 			if (Random.Range (0f, 1f) <= anger - 0.2f) {
 				AI.destination = other.gameObject.transform.position; // "Angry" partygoers will act selfishly and flock to other players
 			}
-			if (Random.Range (0f, 1f) <= anger - 0.5f) { // maybe say hi
-				emotion.Emote ("Yes");
+			if (Random.Range (0f, 1f) <= anger - 0.2f) { // maybe say hi
+
 				if (Random.Range (0, 2) == 0) {
 					EmoteAnim (1f, "Hi");
 				} else {
@@ -76,25 +90,24 @@ public class Partygoer : MonoBehaviour {
 			}
 		}
 		if (other.gameObject.tag == "outerPlayer") { // if the partygoer runs into another player
-
+			emotion.EmoteFaceOnly ("No");
 			if (Random.Range (0f, 1f) <= anger - 0.5f) {
 				AI.speed = minSpeed;
 				AI.destination = other.gameObject.transform.position; // "Angry" partygoers will walk towards the player
 			}
-			if (Random.Range (0f, 1f) <= anger - 0.5f) { // maybe say what
-				emotion.Emote ("Maybe");
+			if (Random.Range (0f, 1f) <= anger - 0.2f) { // maybe say what
+
 				EmoteAnim (1f, "Neutral");
 
 			}
 		}
 		if (other.gameObject.tag == "intimatePlayer") { // if the partygoer gets too close to the player
-
 			if (Random.Range (0f, 1f) <= anger - 0.5f) {
-				// Play freakout anim
+
 				DepressPlayer (anger);
 			}
-			if (Random.Range (0f, 1f) <= anger - 0.5f) { // maybe say fuck off
-				emotion.Emote ("No");
+			if (Random.Range (0f, 1f) <= anger - 0.2f) { // maybe say fuck off
+
 				EmoteAnim (1f, "Oust");
 			}
 		}
@@ -120,11 +133,20 @@ public class Partygoer : MonoBehaviour {
 
 		//Partygoer reactions
 		if (modifier > 0) {
-			EmoteAnim (1f, "Failure");
+			Speak (false);
+			if (Random.Range (0, 2) == 0) {
+				emotion.Emote ("No");
+			} else {
+				emotion.Emote ("Irate");
+			}
+			EmoteAnim (4f, "Failure");
 		} else if (modifier < 0) {
-			EmoteAnim (3f, "Success");
+			Speak (true);
+			emotion.Emote ("Yes");
+			EmoteAnim (4f, "Success");
 		} else {
-			EmoteAnim (1f, "Neutral");
+			emotion.Emote ("Maybe");
+			EmoteAnim (2f, "Neutral");
 		}
 	}
 }
