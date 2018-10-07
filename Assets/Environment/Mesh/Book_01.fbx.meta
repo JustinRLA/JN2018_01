@@ -1,15 +1,14 @@
 fileFormatVersion: 2
-guid: f5ba2a4ac2690884d8f1ae93e4cea2bf
+guid: 6f66336d0dc52c6468948cb312752040
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
-    2100002: lambert1
+    2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Mesh_Beer
+    4300000: Book_01
   externalObjects: {}
   materials:
     importMaterials: 1
