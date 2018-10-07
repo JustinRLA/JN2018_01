@@ -17,6 +17,8 @@ public class Partygoer : MonoBehaviour {
 	public AudioSource Larynx;
 	public AudioClip[] happySounds;
 	public AudioClip[] unhappySounds;
+	public Material darkMaterial;
+	public SkinnedMeshRenderer skinRenderer;
 
 	public void Speak (bool happy) {
 		Larynx.pitch = Random.Range (0.8f, 1.2f);
@@ -141,6 +143,8 @@ public class Partygoer : MonoBehaviour {
 				emotion.Emote ("Irate");
 			}
 			EmoteAnim (4f, "Failure");
+			DarkenCharacter ();
+
 		} else if (modifier < 0) {
 			Speak (true);
 			emotion.Emote ("Yes");
@@ -150,4 +154,17 @@ public class Partygoer : MonoBehaviour {
 			EmoteAnim (2f, "Neutral");
 		}
 	}
+
+	public void DarkenCharacter () {
+		skinRenderer.material = darkMaterial;
+
+		/*	Material[] skinMaterials = skinRenderer.materials;
+
+			for (int i = 0; i < skinMaterials.Length; i++) {
+				skinMaterials[i] = darkMaterial;
+			}
+
+			skinRenderer.materials = skinMaterials;*/
+	}
+
 }
