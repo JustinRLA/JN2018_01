@@ -20,6 +20,7 @@ ModelImporter:
     400012: Pizza6
     400014: PizzaBox
     2100000: No Name
+    2100002: lambert1
     2300000: Pizza1
     2300002: Pizza2
     2300004: Pizza3
@@ -27,6 +28,7 @@ ModelImporter:
     2300008: Pizza5
     2300010: Pizza6
     2300012: PizzaBox
+    2300014: //RootNode
     3300000: Pizza1
     3300002: Pizza2
     3300004: Pizza3
@@ -34,6 +36,7 @@ ModelImporter:
     3300008: Pizza5
     3300010: Pizza6
     3300012: PizzaBox
+    3300014: //RootNode
     4300000: PizzaBox
     4300002: Pizza6
     4300004: Pizza5
@@ -41,7 +44,13 @@ ModelImporter:
     4300008: Pizza3
     4300010: Pizza2
     4300012: Pizza1
-  externalObjects: {}
+    4300014: Mesh_PizzaBox
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 2c183f67237e6474da5219421e80eaa0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
