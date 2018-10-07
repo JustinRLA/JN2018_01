@@ -24,6 +24,9 @@ public class InteractableEntity : MonoBehaviour {
     public int neutralRatio = 30;
     public int failRatio = 100;
 
+    //Adds modifier to success rate when interacting with other characters based on their anger
+    float successMod = 1;
+
     //How much mental health is gained/lost when player interacts with entity
     public int healthImpact = 5;
 
@@ -112,8 +115,13 @@ public class InteractableEntity : MonoBehaviour {
 
     void Result(GameObject player)
     {
+        if(interactableType == InteractableType.partygoer)
+        {
+            successMod = GetComponent<Partygoer>().anger;
+        }
+
         int resultScore = Random.Range(1, 100);
-        if (resultScore <= successRatio)
+        if (resultScore <= successRatio / successMod)
         {
             //Success
             print("player succeeded with " + this.gameObject.name);
@@ -127,7 +135,7 @@ public class InteractableEntity : MonoBehaviour {
                 GetComponent<Partygoer>().SetMood(-healthImpact, player);
             }
         }
-        else if (resultScore <= neutralRatio)
+        else if (resultScore <= neutralRatio / successMod)
         {
             //Neutral
             print("player was neutral with " + this.gameObject.name);
