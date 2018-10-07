@@ -1,21 +1,15 @@
 fileFormatVersion: 2
-guid: 1cc3b46302778f5438f777754c5066c7
+guid: c7ff526d2bced524790830a938948c05
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
     2100000: No Name
-    2100002: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Mesh_LightTable
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: cd5e4d12dcb148a47a229f94d99627c2, type: 2}
+    4300000: Mesh_Tablet
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -54,7 +48,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -62,9 +56,9 @@ ModelImporter:
     preserveHierarchy: 0
     indexFormat: 0
     secondaryUVAngleDistortion: 8
-    secondaryUVAreaDistortion: 15
+    secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVPackMargin: 16
+    secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
