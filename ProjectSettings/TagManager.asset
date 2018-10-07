@@ -12,6 +12,7 @@ TagManager:
   - intimatePartygoer
   - floor
   - wall
+  - Light
   layers:
   - Default
   - TransparentFX

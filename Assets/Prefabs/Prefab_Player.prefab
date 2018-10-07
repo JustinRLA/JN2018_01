@@ -60,7 +60,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1066339326840532
 GameObject:
   m_ObjectHideFlags: 1
@@ -76,7 +76,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1082841721758516
 GameObject:
   m_ObjectHideFlags: 1
@@ -603,7 +603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1482592468201482
 GameObject:
   m_ObjectHideFlags: 1
@@ -982,7 +982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1909641817593832
 GameObject:
   m_ObjectHideFlags: 1
@@ -2284,6 +2284,7 @@ MonoBehaviour:
   collars: []
   BodyMaterials: {fileID: 0}
   accessoryColors: []
+  enableDeletion: 1
 --- !u!114 &114027169355325642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2340,19 +2341,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outfitColors:
-  - {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 1}
-  - {r: 0, g: 0.24365589, b: 0.6886792, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
+  - {r: 0.19704075, g: 0.15267888, b: 0.6886792, a: 1}
   skinColors:
-  - {r: 0.8962264, g: 0.79151314, b: 0.75671947, a: 1}
-  - {r: 0.9150943, g: 0.81625897, b: 0.70358664, a: 1}
-  - {r: 0.91764706, g: 0.7529412, b: 0.5254902, a: 1}
-  - {r: 0.9622642, g: 0.80074495, b: 0.64907444, a: 1}
-  - {r: 1, g: 0.8901961, b: 0.62352943, a: 1}
-  - {r: 0.3254902, g: 0.21568628, b: 0.08235294, a: 1}
-  - {r: 0.6132076, g: 0.42607233, b: 0.30949628, a: 1}
-  - {r: 0.8, g: 0.64705884, b: 0.5176471, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
   recolouredCollars:
   - {fileID: 1356811024570798}
   - {fileID: 1352834500492088}
@@ -2403,17 +2394,12 @@ MonoBehaviour:
   isPlayer: 0
   hats:
   - {fileID: 1909641817593832}
-  - {fileID: 1903542779084958}
-  - {fileID: 1050128147274938}
   collars:
   - {fileID: 1356811024570798}
-  - {fileID: 1352834500492088}
-  - {fileID: 1624045928835106}
   BodyMaterials: {fileID: 137972325972849206}
   accessoryColors:
-  - {r: 1, g: 0.6458118, b: 0, a: 1}
-  - {r: 1, g: 0.8509492, b: 0, a: 1}
-  - {r: 1, g: 0.5615012, b: 0, a: 1}
+  - {r: 1, g: 0.7337059, b: 0, a: 1}
+  enableDeletion: 0
 --- !u!114 &114524870429561778
 MonoBehaviour:
   m_ObjectHideFlags: 1
